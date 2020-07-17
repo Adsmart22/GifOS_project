@@ -1,0 +1,349 @@
+/* Variables for mobile*/
+/* Variables for mobile*/
+.header {
+  font-family: 'Roboto';
+  font-size: 16px;
+  width: 100%;
+  min-height: 100px;
+}
+
+.header .menuSection {
+  height: 95px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap row;
+          flex-flow: wrap row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .menuSection #mobileLogo {
+  height: 48.8px;
+  width: 48.8px;
+  margin-left: 22px;
+}
+
+.header .menuSection #menuIcon, .header .menuSection #closeMenu {
+  width: 15px;
+  height: 14px;
+  pointer-events: none;
+}
+
+/* Variables for mobile*/
+.menuSection input[type="checkbox"], .menuSection #menuIcon, .menuSection #closeMenu {
+  position: absolute;
+  right: 24px;
+}
+
+.menuSection #closeMenu {
+  display: none;
+}
+
+.menuSection input[type="checkbox"] {
+  opacity: 0;
+}
+
+nav {
+  text-align: center;
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 100px;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(87, 46, 229, 0.9);
+  opacity: 100%;
+  color: #FFFFFF;
+}
+
+nav ul {
+  list-style: none;
+  width: 100%;
+  font-size: 20px;
+}
+
+nav ul li {
+  height: 70px;
+  list-style: none;
+  display: block;
+}
+
+nav ul li a {
+  color: #FFFFFF;
+  margin-top: 40px;
+  display: block;
+  text-decoration: none;
+}
+
+/* Variables for mobile*/
+.purpleBar {
+  background-color: #572EE5;
+  height: 5px;
+}
+
+.graySection {
+  background-color: #F3F5F8;
+}
+
+.whiteSection {
+  background-color: #FFFFFF;
+}
+
+#mainTitle {
+  width: 288px;
+  height: 188px;
+  margin: auto;
+  font-weight: bold;
+  font-size: 30px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 36px;
+}
+
+#mainTitle span {
+  color: #50E3C2;
+}
+
+.secundaryTitle {
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  color: #572EE5;
+  line-height: 30px;
+}
+
+.btnShowMore {
+  border: solid 1px #572EE5;
+  background-color: #FFFFFF;
+  border-radius: 25px;
+  width: 127px;
+  height: 50px;
+  font-size: 13px;
+  color: #572EE5;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 78px auto 78px auto;
+}
+
+.favorites, .myGifos {
+  display: none;
+}
+
+/* Variables for mobile*/
+.footer {
+  color: #000000;
+  width: 100%;
+  min-height: 201px;
+  position: absolute;
+}
+
+.footer aside {
+  height: 196px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap column;
+          flex-flow: wrap column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer aside h3 {
+  font-size: 15px;
+}
+
+.footer aside p {
+  font-size: 14px;
+}
+
+.footer aside .shareImages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 40%;
+}
+
+.footer aside .shareImages img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Variables for mobile*/
+body > main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap column;
+          flex-flow: wrap column;
+}
+
+body > main img {
+  width: 273px;
+  height: 130px;
+  margin: auto;
+}
+
+body > main .searchControl {
+  border-radius: 27px;
+  background-color: #FFFFFF;
+  border: #572EE5 1px solid;
+  height: 50px;
+  width: 334px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap row;
+          flex-flow: wrap row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body > main .searchControl input {
+  border: none;
+  width: 215px;
+  height: 24px;
+  margin-left: 40px;
+}
+
+body > main .searchControl img {
+  width: 24px;
+  height: 24px;
+}
+
+body > main p {
+  margin: 20px auto 48px auto;
+  color: #572EE5;
+  font-size: 18px;
+  width: 236px;
+  height: 75px;
+  text-align: center;
+}
+
+body > main p span {
+  font-weight: bold;
+}
+
+/* Variables for mobile*/
+.trendingSection p {
+  padding-top: 10px;
+  width: 333px;
+  height: 46px;
+  font-size: 16px;
+  color: #000000;
+  line-height: 23px;
+  margin: auto;
+  text-align: center;
+}
+
+.trendingSection h2 {
+  padding-top: 40px;
+}
+
+.trendingSection .trendingContainer {
+  padding: 32px;
+}
+
+.trendingSection .trendingContainer img {
+  width: 243px;
+  height: 187px;
+  margin-left: 22px;
+}
+
+/* Variables for mobile*/
+.favorites {
+  text-align: center;
+}
+
+.favorites img {
+  width: 28px;
+  height: 21px;
+}
+
+.favorites .favoriteItems {
+  width: 90%;
+  min-height: 720px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (158px)[2];
+      grid-template-columns: repeat(2, 158px);
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0.5em;
+  grid-row-gap: 0.5em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 46px;
+}
+
+.favorites .favoriteItems img {
+  width: 158px;
+  height: 120px;
+}
+
+/* Variables for mobile*/
+.myGifos {
+  text-align: center;
+}
+
+.myGifos img {
+  width: 23px;
+  height: 21px;
+}
+
+.myGifos .gifosItems {
+  width: 90%;
+  min-height: 720px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (156px)[2];
+      grid-template-columns: repeat(2, 156px);
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0.5em;
+  grid-row-gap: 0.5em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 46px;
+}
+
+.myGifos .gifosItems img {
+  width: 156px;
+  height: 120px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=styles.css.map */

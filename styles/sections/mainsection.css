@@ -1,0 +1,64 @@
+/* Variables for mobile*/
+body > main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap column;
+          flex-flow: wrap column;
+}
+
+body > main img {
+  width: 273px;
+  height: 130px;
+  margin: auto;
+}
+
+body > main .searchControl {
+  border-radius: 27px;
+  background-color: #FFFFFF;
+  border: #572EE5 1px solid;
+  height: 50px;
+  width: 334px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap row;
+          flex-flow: wrap row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body > main .searchControl input {
+  border: none;
+  width: 215px;
+  height: 24px;
+  margin-left: 40px;
+}
+
+body > main .searchControl img {
+  width: 24px;
+  height: 24px;
+}
+
+body > main p {
+  margin: 20px auto 48px auto;
+  color: #572EE5;
+  font-size: 18px;
+  width: 236px;
+  height: 75px;
+  text-align: center;
+}
+
+body > main p span {
+  font-weight: bold;
+}
+/*# sourceMappingURL=mainsection.css.map */

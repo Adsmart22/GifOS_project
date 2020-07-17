@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset= "UTF-8">
+    <meta name= "viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles/styles.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <title>GifOS</title>
+  </head>
+  <body>
+      <header class="header">
+          <div class="purpleBar"></div>
+          <div class="menuSection" id="logoStart">
+            <img src="./images/logos/logo-desktop.svg" alt="Logo mobile" id="mobileLogo"> 
+
+            <img src="./images/icons/burger.svg" alt="Menu" id="menuIcon">
+            <img src="./images/icons/close.svg" alt="Cerrar" id="closeMenu">
+            <input type="checkbox" id="checkMenu">
+            </div>
+      </header>
+      <nav class="menu" id="burgerMenu">
+        <ul>
+          <li><a href="#" id="nightModeOption" onclick="showSection(this)"  >Modo Nocturno</a><br>_____</li>
+          <li><a href="#" id="favoritesOption" onclick="showSection(this)">Favoritos</a><br>_____</li>
+          <li><a href="#" id="myGifOption" onclick="showSection(this)">Mis GifOS</a><br>_____</li>
+        </ul>
+      </nav>
+      <main class="whiteSection main" id="main">
+          <h1 id="mainTitle">Inspírate, busca, guarda y crea los mejores <span>GIFOS</span> </h1>
+          <img src="./images/others/ilustra_header.svg" alt="Ilustra"/>
+          <span class="searchControl">
+            <input type="text" maxlength="70" placeholder="Busca GIFOS y más">
+            <img src="./images/icons/icon-search.svg" alt="Búsqueda" />
+          </span>          
+          <p>
+            <span>Trending</span><br/>
+            Reactions, Entertainment, Sports, Stickers, Artist
+          </p>               
+      </main>
+      <aside class="whiteSection favorites" id="favorites">
+        <img src="./images/icons/icon-favoritos.svg">
+        <h2 class="secundaryTitle">Favoritos</h2>
+        <div class="favoriteItems">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+        </div>
+        <button class="btnShowMore">VER MÁS</button>
+      </aside>
+      <aside class="whiteSection myGifos" id="myGifos">
+        <img src="./images/icons/icon-mis-gifos.svg"/>
+        <h2 class="secundaryTitle">Mis GIFOS</h2>
+        <div class="gifosItems">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+          <img src="./images/dummies/archivoDummy.PNG">
+        </div>
+        <button class="btnShowMore">VER MÁS</button>
+      </aside>
+      <aside class="graySection trendingSection">
+        <h2 class="secundaryTitle">Trending GIFOS</h2>
+        <p>Mira los últimos <br/> GIFOS de nuestra comunidad</p>
+        <div class="trendingContainer">
+          <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba"/>
+        </div>
+      </aside>
+      
+      <footer class="footer whiteSection">
+          <aside>
+            <h3>Compartir en:</h3>
+            <div class="shareImages">
+              <a href="www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="./images/socialNetworks/icon_facebook.svg" alt="Facebook" id="fb" />
+              </a>
+              <a href="www.twitter.com" target="_blank" rel="noopener noreferrer">
+                <img src="./images/socialNetworks/icon-twitter.svg" alt="Twitter" id="tw" />
+              </a>
+              <a href="www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <img src="./images/socialNetworks/icon_instagram.svg" alt="Instagram" id= "inst" />
+              </a>
+            </div>
+            <p> &copy; GIFOS 2020 All Rights Reserved. </p>
+          </aside>  
+          <div class="purpleBar"></div>          
+      </footer>
+    
+    <script src="./scripts/script.js"> </script>
+    <script src="./scripts/menu.js"> </script>
+  </body>
+
+  
+</html>

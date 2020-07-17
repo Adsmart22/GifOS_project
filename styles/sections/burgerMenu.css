@@ -1,0 +1,46 @@
+/* Variables for mobile*/
+.menuSection input[type="checkbox"], .menuSection #menuIcon, .menuSection #closeMenu {
+  position: absolute;
+  right: 24px;
+}
+
+.menuSection #closeMenu {
+  display: none;
+}
+
+.menuSection input[type="checkbox"] {
+  opacity: 0;
+}
+
+nav {
+  text-align: center;
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 100px;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(87, 46, 229, 0.9);
+  opacity: 100%;
+  color: #FFFFFF;
+}
+
+nav ul {
+  list-style: none;
+  width: 100%;
+  font-size: 20px;
+}
+
+nav ul li {
+  height: 70px;
+  list-style: none;
+  display: block;
+}
+
+nav ul li a {
+  color: #FFFFFF;
+  margin-top: 40px;
+  display: block;
+  text-decoration: none;
+}
+/*# sourceMappingURL=burgerMenu.css.map */
