@@ -1,0 +1,26 @@
+/* Variables for mobile*/
+.trendingSection p {
+  padding-top: 10px;
+  width: 333px;
+  height: 46px;
+  font-size: 16px;
+  color: #000000;
+  line-height: 23px;
+  margin: auto;
+  text-align: center;
+}
+
+.trendingSection h2 {
+  padding-top: 40px;
+}
+
+.trendingSection .trendingContainer {
+  padding: 32px;
+}
+
+.trendingSection .trendingContainer img {
+  width: 243px;
+  height: 187px;
+  margin-left: 22px;
+}
+/*# sourceMappingURL=trendingSection.css.map */

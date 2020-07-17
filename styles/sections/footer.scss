@@ -1,0 +1,39 @@
+@import "./variables.scss";
+
+.footer{
+    color: #000000 ;
+    width: 100%;
+    min-height: 201px;
+    //border: solid green 1px;
+    position: absolute;
+    //bottom: 0;
+    //left: 0;
+
+    aside{
+        height: 196px; 
+        display: flex;
+        flex-flow: wrap column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        h3{
+            font-size: 15px;
+        }
+        p{
+            font-size: 14px;
+        }
+        .shareImages{
+            display: flex;
+            justify-content: space-evenly;
+            width: 40%;
+
+            img{
+                width: $redesTamano;
+                height: $redesTamano;
+            }
+        }
+
+
+        
+    }
+}

@@ -1,0 +1,29 @@
+@import './variables.scss';
+
+.trendingSection {
+    p {
+        padding-top: 10px;
+        width: 333px;
+        height: 46px;
+        font-size: 16px;
+        color: $black;
+        line-height: 23px;
+        margin: auto;
+        text-align: center;
+    }
+
+    h2{
+        padding-top: 40px;
+    }
+
+    .trendingContainer{
+        padding: 32px;
+
+        img{
+            width: $trendingImgWidth;
+            height: $trendingImgHeight;
+            margin-left: 22px;
+        }
+
+    }
+} 
