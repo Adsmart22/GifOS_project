@@ -7,9 +7,14 @@
 @import "sections/trendingSection.scss";
 @import "sections/favorites.scss";
 @import "sections/gifos.scss";
+@import "sections/mixin.scss";
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+@media all and (max-width: 375px) {
+    @include aplicarTipografiaMobile();
 }

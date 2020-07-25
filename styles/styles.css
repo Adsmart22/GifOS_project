@@ -1,8 +1,6 @@
 /* Variables for mobile*/
 /* Variables for mobile*/
 .header {
-  font-family: 'Roboto';
-  font-size: 16px;
   width: 100%;
   min-height: 100px;
 }
@@ -26,8 +24,10 @@
 
 .header .menuSection #mobileLogo {
   height: 48.8px;
-  width: 48.8px;
+  width: 60.8px;
   margin-left: 22px;
+  font-weight: bold;
+  font-family: 'Roboto';
 }
 
 .header .menuSection #menuIcon, .header .menuSection #closeMenu {
@@ -98,7 +98,7 @@ nav ul li a {
 
 #mainTitle {
   width: 288px;
-  height: 188px;
+  height: 150px;
   margin: auto;
   font-weight: bold;
   font-size: 30px;
@@ -117,6 +117,7 @@ nav ul li a {
   font-size: 25px;
   color: #572EE5;
   line-height: 30px;
+  font-family: "Montserrat-Bold";
 }
 
 .btnShowMore {
@@ -195,7 +196,7 @@ body > main {
           flex-flow: wrap column;
 }
 
-body > main img {
+body > main .imgBusqueda {
   width: 273px;
   height: 130px;
   margin: auto;
@@ -238,13 +239,16 @@ body > main .searchControl img {
 body > main p {
   margin: 20px auto 48px auto;
   color: #572EE5;
-  font-size: 18px;
+  font-size: 16px;
   width: 236px;
   height: 75px;
   text-align: center;
+  font-family: "Montserrat-Medium";
+  font-weight: normal;
 }
 
-body > main p span {
+body > main span {
+  margin-top: 1em;
   font-weight: bold;
 }
 
@@ -258,6 +262,7 @@ body > main p span {
   line-height: 23px;
   margin: auto;
   text-align: center;
+  font-family: "Roboto-Regular";
 }
 
 .trendingSection h2 {
@@ -340,10 +345,49 @@ body > main p span {
   height: 120px;
 }
 
+/* Variables for mobile*/
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+@media all and (max-width: 375px) {
+  .header {
+    font-family: "Roboto";
+    font-size: 16px;
+  }
+  .menu {
+    font-family: "Montserrat-Bold";
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .main {
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+  }
+  .main #mainTitle {
+    font-size: 25px;
+  }
+  .main input {
+    font-family: "Roboto";
+  }
+  .trendingSection > p {
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+  }
+  .secundaryTitle {
+    font-size: 20px;
+    font-family: "Montserrat-Bold";
+  }
+  .btnShowMore {
+    font-size: 13px;
+    font-family: "Montserrat-Bold";
+  }
+  .footer {
+    font-size: 15px;
+    font-family: "Roboto-Regular";
+  }
 }
 /*# sourceMappingURL=styles.css.map */

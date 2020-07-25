@@ -15,7 +15,7 @@
 
 #mainTitle{
     width: 288px;
-    height: 188px;
+    height: 150px;
     margin: auto;
     font-weight: bold;
     font-size: 30px;
@@ -34,6 +34,7 @@
     font-size: 25px;
     color: $purple;
     line-height: 30px;
+    font-family: $fuenteBody;
 }
 
 .btnShowMore{
