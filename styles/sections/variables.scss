@@ -11,6 +11,7 @@ $aqua: #50E3C2;;
 $headerWidth: 100%;
 $headerHeight: 100px;
 $logo: 48.8px;
+$logoWidht: 60.8px;
 $menuIconHeight: 14px;
 $menuIconWidth: 15px;
 $fondoMenu: rgba(87,46,229,0.90);
@@ -25,12 +26,24 @@ $trendingImgWidth: 243px;
 $trendingImgHeight: 187px;
 $favoriteImgWidth: 28px;
 $imageFavoriteWidth: 158px;
-$gifImgW: 23px;
+$gifImgW: 23px; 
 $gifItemW:156px;
+$resultWidth: 156px;
+$resultHeight: 120px;
 
 $genericHeightIcons: 21px;
 $genericHeightImg: 120px;
 
-
 //Footer
 $redesTamano: 20px;
+
+//Tipografias
+$tamanoFuente: 16px;
+$tamanoTitulo: 25px;
+$tamanoSubtitulo: 20px;
+$tamanoButton: 13px;
+$tamanoMenu: 15px;
+$fuenteHeader: 'Roboto';
+$fuenteBody: 'Montserrat-Bold';
+$fuenteBodyMedium: 'Montserrat-Medium';
+$fuenteRegular: 'Roboto-Regular';

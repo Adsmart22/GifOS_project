@@ -19,11 +19,12 @@ function openCloseMenu(){
     }
 }
 
-/*
+
 let mainSection = document.getElementById("main");
 let favoriteSection = document.getElementById("favorites");
 let myGifosSection = document.getElementById("myGifos");
-//let searchGifsSection = document.getElementById("searchGifs");
+//let searchGifsSection = document.getElementById("searchGifs");}
+let searchImage = document.getElementById("searchImg");
 
 function showSection(opcion){
     mainSection.style.display ="none";
@@ -52,6 +53,7 @@ function colapseMenu(){
     menu.style.display = "none";
     btnOpen.style.display = "block";
     btnClose.style.display = "none";
+    searchImage.setAttribute("class", "imgBusqueda");
 }
 
 let logoStart = document.getElementById("logoStart");
@@ -62,4 +64,3 @@ let reiniciar = () => {
     mainSection.style.display = "block";
 };
 logoStart.addEventListener("click", reiniciar);
-*/

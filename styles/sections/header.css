@@ -1,7 +1,5 @@
 /* Variables for mobile*/
 .header {
-  font-family: 'Roboto';
-  font-size: 16px;
   width: 100%;
   min-height: 100px;
 }
@@ -25,11 +23,13 @@
 
 .header .menuSection #mobileLogo {
   height: 48.8px;
-  width: 48.8px;
+  width: 60.8px;
   margin-left: 22px;
+  font-weight: bold;
+  font-family: 'Roboto';
 }
 
-.header .menuSection #menuIcon, .header .menuSection #closeMenu {
+.header .menuSection .menuIcon, .header .menuSection .closeMenu {
   width: 15px;
   height: 14px;
   pointer-events: none;

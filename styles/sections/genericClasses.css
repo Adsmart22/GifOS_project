@@ -14,7 +14,7 @@
 
 #mainTitle {
   width: 288px;
-  height: 188px;
+  height: 150px;
   margin: auto;
   font-weight: bold;
   font-size: 30px;
@@ -33,6 +33,7 @@
   font-size: 25px;
   color: #572EE5;
   line-height: 30px;
+  font-family: "Montserrat-Bold";
 }
 
 .btnShowMore {
@@ -48,7 +49,8 @@
   margin: 78px auto 78px auto;
 }
 
-.favorites, .myGifos {
-  display: none;
-}
+/*
+.favorites, .myGifos{
+    display: none;
+}*/
 /*# sourceMappingURL=genericClasses.css.map */

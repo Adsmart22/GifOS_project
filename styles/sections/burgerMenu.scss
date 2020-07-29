@@ -1,12 +1,72 @@
 @import './variables.scss';
 
 .menuSection {
-    input[type="checkbox"], #menuIcon, #closeMenu {
+    input[type="checkbox"], .menuIcon, .closeMenu {
         position: absolute;  
         right: 24px;
     }
 
-    #closeMenu{
+    input[type="checkbox"] {
+        opacity: 0; 
+    }  
+
+    input:checked ~ nav {
+        display: block;
+        transition: max-width 0.3s linear;
+    }
+
+    input:checked ~ #menuIcon {
+        display: none;
+      }
+      
+    input:not(:checked) ~ #closeMenu {
+        display: none;
+    }
+}
+
+nav {
+    text-align: center;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: 100px;
+    bottom: 0;
+    width: 100%;
+    background-color: $fondoMenu;
+    opacity: 100%;
+    color: $white;
+
+    ul{
+        list-style: none;
+        width: 100%;
+        font-size: 20px;
+
+        li{
+            height: 70px;
+            list-style: none;
+            display: block;
+
+            a{
+                color: $white;
+                margin-top: 40px;
+                display: block;
+                text-decoration: none;
+            }
+        } 
+    }
+}
+
+
+
+/* @import './variables.scss';
+
+.menuSection {
+    input[type="checkbox"], .menuIcon, .closeMenu {
+        position: absolute;  
+        right: 24px;
+    }
+
+    .closeMenu{
         display: none;
     }
     
@@ -46,3 +106,4 @@ nav {
         } 
     }
 }
+ */

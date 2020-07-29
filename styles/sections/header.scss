@@ -1,8 +1,8 @@
 @import './variables.scss';
 
 .header{
-    font-family: 'Roboto';
-    font-size: 16px;
+    //font-family: 'Roboto';
+    //font-size: 16px;
     width: $headerWidth;
     min-height: $headerHeight;
 
@@ -15,11 +15,13 @@
 
         #mobileLogo{
             height: $logo;
-            width: $logo;
+            width: $logoWidht;
             margin-left: 22px;
+            font-weight: bold;
+            font-family: 'Roboto';
         }
 
-        #menuIcon, #closeMenu{
+        .menuIcon, .closeMenu{
             width: $menuIconWidth;
             height: $menuIconHeight;
             //margin-right: 24px;

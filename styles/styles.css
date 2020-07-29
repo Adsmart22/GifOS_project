@@ -1,8 +1,6 @@
 /* Variables for mobile*/
 /* Variables for mobile*/
 .header {
-  font-family: 'Roboto';
-  font-size: 16px;
   width: 100%;
   min-height: 100px;
 }
@@ -26,28 +24,40 @@
 
 .header .menuSection #mobileLogo {
   height: 48.8px;
-  width: 48.8px;
+  width: 60.8px;
   margin-left: 22px;
+  font-weight: bold;
+  font-family: 'Roboto';
 }
 
-.header .menuSection #menuIcon, .header .menuSection #closeMenu {
+.header .menuSection .menuIcon, .header .menuSection .closeMenu {
   width: 15px;
   height: 14px;
   pointer-events: none;
 }
 
 /* Variables for mobile*/
-.menuSection input[type="checkbox"], .menuSection #menuIcon, .menuSection #closeMenu {
+.menuSection input[type="checkbox"], .menuSection .menuIcon, .menuSection .closeMenu {
   position: absolute;
   right: 24px;
 }
 
-.menuSection #closeMenu {
+.menuSection input[type="checkbox"] {
+  opacity: 0;
+}
+
+.menuSection input:checked ~ nav {
+  display: block;
+  -webkit-transition: max-width 0.3s linear;
+  transition: max-width 0.3s linear;
+}
+
+.menuSection input:checked ~ #menuIcon {
   display: none;
 }
 
-.menuSection input[type="checkbox"] {
-  opacity: 0;
+.menuSection input:not(:checked) ~ #closeMenu {
+  display: none;
 }
 
 nav {
@@ -82,6 +92,55 @@ nav ul li a {
   text-decoration: none;
 }
 
+/* @import './variables.scss';
+
+.menuSection {
+    input[type="checkbox"], .menuIcon, .closeMenu {
+        position: absolute;  
+        right: 24px;
+    }
+
+    .closeMenu{
+        display: none;
+    }
+    
+    input[type="checkbox"] {
+        opacity: 0; 
+    }  
+}
+
+nav {
+    text-align: center;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: 100px;
+    bottom: 0;
+    width: 100%;
+    background-color: $fondoMenu;
+    opacity: 100%;
+    color: $white;
+
+    ul{
+        list-style: none;
+        width: 100%;
+        font-size: 20px;
+
+        li{
+            height: 70px;
+            list-style: none;
+            display: block;
+
+            a{
+                color: $white;
+                margin-top: 40px;
+                display: block;
+                text-decoration: none;
+            }
+        } 
+    }
+}
+ */
 /* Variables for mobile*/
 .purpleBar {
   background-color: #572EE5;
@@ -98,7 +157,7 @@ nav ul li a {
 
 #mainTitle {
   width: 288px;
-  height: 188px;
+  height: 150px;
   margin: auto;
   font-weight: bold;
   font-size: 30px;
@@ -117,6 +176,7 @@ nav ul li a {
   font-size: 25px;
   color: #572EE5;
   line-height: 30px;
+  font-family: "Montserrat-Bold";
 }
 
 .btnShowMore {
@@ -132,10 +192,10 @@ nav ul li a {
   margin: 78px auto 78px auto;
 }
 
-.favorites, .myGifos {
-  display: none;
-}
-
+/*
+.favorites, .myGifos{
+    display: none;
+}*/
 /* Variables for mobile*/
 .footer {
   color: #000000;
@@ -195,7 +255,7 @@ body > main {
           flex-flow: wrap column;
 }
 
-body > main img {
+body > main .imgBusqueda {
   width: 273px;
   height: 130px;
   margin: auto;
@@ -238,14 +298,38 @@ body > main .searchControl img {
 body > main p {
   margin: 20px auto 48px auto;
   color: #572EE5;
-  font-size: 18px;
+  font-size: 16px;
   width: 236px;
   height: 75px;
   text-align: center;
+  font-family: "Montserrat-Medium";
+  font-weight: normal;
 }
 
-body > main p span {
+body > main span {
+  margin-top: 1em;
   font-weight: bold;
+}
+
+body > main .resultOfSearch {
+  width: 100%;
+}
+
+body > main .resultOfSearch .resultContainer {
+  margin-top: 46px;
+  width: 90%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+}
+
+body > main .resultOfSearch .resultContainer .gifResult {
+  width: 156px;
+  height: 120px;
 }
 
 /* Variables for mobile*/
@@ -258,6 +342,7 @@ body > main p span {
   line-height: 23px;
   margin: auto;
   text-align: center;
+  font-family: "Roboto-Regular";
 }
 
 .trendingSection h2 {
@@ -340,10 +425,49 @@ body > main p span {
   height: 120px;
 }
 
+/* Variables for mobile*/
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+@media all and (max-width: 375px) {
+  .header {
+    font-family: "Roboto";
+    font-size: 16px;
+  }
+  .menu {
+    font-family: "Montserrat-Bold";
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .main {
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+  }
+  .main #mainTitle {
+    font-size: 25px;
+  }
+  .main input {
+    font-family: "Roboto";
+  }
+  .trendingSection > p {
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+  }
+  .secundaryTitle {
+    font-size: 20px;
+    font-family: "Montserrat-Bold";
+  }
+  .btnShowMore {
+    font-size: 13px;
+    font-family: "Montserrat-Bold";
+  }
+  .footer {
+    font-size: 15px;
+    font-family: "Roboto-Regular";
+  }
 }
 /*# sourceMappingURL=styles.css.map */

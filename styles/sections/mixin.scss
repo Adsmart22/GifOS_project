@@ -1,5 +1,44 @@
-@mixin cambiarTipografia(){
-    h1 {
-        font-size: "Montserrat";
+@import './variables.scss';
+
+@mixin aplicarTipografiaMobile(){
+    .header{
+        font-family: $fuenteHeader;
+        font-size: $tamanoFuente;
+    }
+    .menu{
+        font-family: $fuenteBody;
+        font-weight: bold;
+        font-size: $tamanoMenu;
+    }
+    .main {
+        font-family: $fuenteBody;
+        font-size: $tamanoFuente;
+
+        #mainTitle {
+            font-size: $tamanoTitulo;
+        }
+        input {
+            font-family: $fuenteHeader;
+        }
+    }
+
+    .trendingSection > p {
+        font-family: $fuenteBody;
+        font-size: $tamanoFuente;
+    }
+    
+    .secundaryTitle{
+        font-size: $tamanoSubtitulo;
+        font-family: $fuenteBody;
+    }
+
+    .btnShowMore{
+        font-size: $tamanoButton;
+        font-family: $fuenteBody;
+    }
+    
+    .footer {
+        font-size: $tamanoMenu;
+        font-family: $fuenteRegular;
     }
 }
