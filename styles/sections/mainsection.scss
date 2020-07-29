@@ -47,4 +47,23 @@ body > main {
         margin-top: 1em;
         font-weight: bold;
     }
+
+    .resultOfSearch{
+        width: 100%;
+
+        .resultContainer{
+            margin-top: 46px;
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr) ;
+            column-gap: 5px;
+
+
+            .gifResult{
+                width: $resultWidth;
+                height: $resultHeight;
+            }
+        }
+    }
 }

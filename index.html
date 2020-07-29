@@ -10,15 +10,35 @@
     <title>GifOS</title>
   </head>
   <body>
-      <header class="header">
+    <header class="header">
+      <div class="purpleBar"></div>
+      <div class="menuSection" id="logoStart">
+        <img src="./images/logos/logo-desktop.svg" alt="Logo mobile" id="mobileLogo"> 
+
+        <input type="checkbox" id="checkMenu">
+        <img src="./images/icons/burger.svg" alt="Menu" class="menuIcon" id="menuIcon" >
+        <img src="./images/icons/close.svg" alt="Cerrar" class="closeMenu" id="closeMenu">
+        
+
+        <nav class="menu" id="burgerMenu">
+            <ul>
+              <li><a href="#" id="nightModeOption" >Modo Nocturno</a><br>_____</li>
+              <li><a href="#" id="favoritesOption" >Favoritos</a><br>_____</li>
+              <li><a href="#" id="myGifOption">Mis GifOS</a><br>_____</li>
+            </ul>
+          </nav>
+      </div>
+    </header>
+      <!-- <header class="header">
           <div class="purpleBar"></div>
           <div class="menuSection" id="logoStart">
             <img src="./images/logos/logo-desktop.svg" alt="Logo mobile" id="mobileLogo"> 
 
-            <img src="./images/icons/burger.svg" alt="Menu" id="menuIcon">
-            <img src="./images/icons/close.svg" alt="Cerrar" id="closeMenu">
+            <img src="./images/icons/burger.svg" alt="Menu" class="menuIcon" id="menuIcon" >
+            <img src="./images/icons/close.svg" alt="Cerrar" class="closeMenu" id="closeMenu">
             <input type="checkbox" id="checkMenu">
-            </div>
+            
+          </div>
       </header>
       <nav class="menu" id="burgerMenu">
         <ul>
@@ -26,7 +46,7 @@
           <li><a href="#" id="favoritesOption" onclick="showSection(this)">Favoritos</a><br>_____</li>
           <li><a href="#" id="myGifOption" onclick="showSection(this)">Mis GifOS</a><br>_____</li>
         </ul>
-      </nav>
+      </nav> -->
       <main class="whiteSection main" id="main">
           <h1 id="mainTitle">Inspírate, busca, guarda y crea los mejores <span>GIFOS</span> </h1>
           <img src="./images/others/ilustra_header.svg" alt="Ilustra" class="imgBusqueda" id="searchImg"/>
@@ -38,7 +58,15 @@
           <span class="secundaryTitle">Trending</span>
           <p>
             Reactions, Entertainment, Sports, Stickers, Artist
-          </p>               
+          </p>
+          <section class="resultOfSearch">
+            <h2 class="secundaryTitle" id="result">Resultado</h2>
+            <div class="resultContainer">
+              <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba"/ class="gifResult">
+              <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba" class="gifResult"/>
+            </div>
+          </section>
+          <button class="btnShowMore">VER MÁS</button>               
       </main>
       <aside class="whiteSection favorites" id="favorites">
         <img src="./images/icons/icon-favoritos.svg">
@@ -106,7 +134,7 @@
       </footer>
     
     <script src="./scripts/script.js"> </script>
-    <script src="./scripts/menu.js"> </script>
+    <!-- <script src="./scripts/menu.js"> </script> -->
   </body>
 
   

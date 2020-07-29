@@ -30,24 +30,34 @@
   font-family: 'Roboto';
 }
 
-.header .menuSection #menuIcon, .header .menuSection #closeMenu {
+.header .menuSection .menuIcon, .header .menuSection .closeMenu {
   width: 15px;
   height: 14px;
   pointer-events: none;
 }
 
 /* Variables for mobile*/
-.menuSection input[type="checkbox"], .menuSection #menuIcon, .menuSection #closeMenu {
+.menuSection input[type="checkbox"], .menuSection .menuIcon, .menuSection .closeMenu {
   position: absolute;
   right: 24px;
 }
 
-.menuSection #closeMenu {
+.menuSection input[type="checkbox"] {
+  opacity: 0;
+}
+
+.menuSection input:checked ~ nav {
+  display: block;
+  -webkit-transition: max-width 0.3s linear;
+  transition: max-width 0.3s linear;
+}
+
+.menuSection input:checked ~ #menuIcon {
   display: none;
 }
 
-.menuSection input[type="checkbox"] {
-  opacity: 0;
+.menuSection input:not(:checked) ~ #closeMenu {
+  display: none;
 }
 
 nav {
@@ -82,6 +92,55 @@ nav ul li a {
   text-decoration: none;
 }
 
+/* @import './variables.scss';
+
+.menuSection {
+    input[type="checkbox"], .menuIcon, .closeMenu {
+        position: absolute;  
+        right: 24px;
+    }
+
+    .closeMenu{
+        display: none;
+    }
+    
+    input[type="checkbox"] {
+        opacity: 0; 
+    }  
+}
+
+nav {
+    text-align: center;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: 100px;
+    bottom: 0;
+    width: 100%;
+    background-color: $fondoMenu;
+    opacity: 100%;
+    color: $white;
+
+    ul{
+        list-style: none;
+        width: 100%;
+        font-size: 20px;
+
+        li{
+            height: 70px;
+            list-style: none;
+            display: block;
+
+            a{
+                color: $white;
+                margin-top: 40px;
+                display: block;
+                text-decoration: none;
+            }
+        } 
+    }
+}
+ */
 /* Variables for mobile*/
 .purpleBar {
   background-color: #572EE5;
@@ -133,10 +192,10 @@ nav ul li a {
   margin: 78px auto 78px auto;
 }
 
-.favorites, .myGifos {
-  display: none;
-}
-
+/*
+.favorites, .myGifos{
+    display: none;
+}*/
 /* Variables for mobile*/
 .footer {
   color: #000000;
@@ -250,6 +309,27 @@ body > main p {
 body > main span {
   margin-top: 1em;
   font-weight: bold;
+}
+
+body > main .resultOfSearch {
+  width: 100%;
+}
+
+body > main .resultOfSearch .resultContainer {
+  margin-top: 46px;
+  width: 90%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+}
+
+body > main .resultOfSearch .resultContainer .gifResult {
+  width: 156px;
+  height: 120px;
 }
 
 /* Variables for mobile*/

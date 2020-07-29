@@ -64,4 +64,25 @@ body > main span {
   margin-top: 1em;
   font-weight: bold;
 }
+
+body > main .resultOfSearch {
+  width: 100%;
+}
+
+body > main .resultOfSearch .resultContainer {
+  margin-top: 46px;
+  width: 90%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+}
+
+body > main .resultOfSearch .resultContainer .gifResult {
+  width: 156px;
+  height: 120px;
+}
 /*# sourceMappingURL=mainsection.css.map */
