@@ -18,3 +18,7 @@
 @media all and (max-width: 375px) {
     @include aplicarTipografiaMobile();
 }
+
+@media all and (min-width: 376px) {
+    @include ajustarTextos();
+}

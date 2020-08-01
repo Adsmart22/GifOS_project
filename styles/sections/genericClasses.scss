@@ -3,6 +3,7 @@
 .purpleBar{
     background-color: $purple;
     height: 5px;
+    width: 100%;
 }
 
 .graySection{
@@ -48,6 +49,16 @@
     letter-spacing: 0;
     text-align: center;
     margin: 78px auto 78px auto;
+    font-family: $fuenteBody;
+
+    &:hover{
+        background-color: $purple;
+        color: $white;
+    }
+}
+
+#trendingText, #lastGifText {
+    width: 288px;
 }
 
 /*

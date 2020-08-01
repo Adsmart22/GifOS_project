@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Variables for mobile*/
 .trendingSection p {
   padding-top: 10px;
@@ -16,12 +17,34 @@
 }
 
 .trendingSection .trendingContainer {
-  padding: 32px;
+  margin-top: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap column;
+      flex-wrap: wrap column;
+  /*  DISEÑO DE LOS CONTROLES
+        #controlLeft, #controlRight {
+            display: none;
+            border: solid 1px orange;
+            width: 45px;
+
+            img{
+                margin: auto 0 auto 0;
+                width: 40px;
+                height: 40px;
+                border: solid 1px $purple;
+            }
+        }*/
 }
 
-.trendingSection .trendingContainer img {
+.trendingSection .trendingContainer #resultTrendingGif img {
   width: 243px;
   height: 187px;
   margin-left: 22px;
+}
+
+.trendingSection .trendingContainer #controlLeft, .trendingSection .trendingContainer #controlRight {
+  display: none;
 }
 /*# sourceMappingURL=trendingSection.css.map */

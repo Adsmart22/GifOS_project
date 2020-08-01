@@ -2,6 +2,7 @@
 .purpleBar {
   background-color: #572EE5;
   height: 5px;
+  width: 100%;
 }
 
 .graySection {
@@ -47,6 +48,16 @@
   letter-spacing: 0;
   text-align: center;
   margin: 78px auto 78px auto;
+  font-family: "Montserrat-Bold";
+}
+
+.btnShowMore:hover {
+  background-color: #572EE5;
+  color: #FFFFFF;
+}
+
+#trendingText, #lastGifText {
+  width: 288px;
 }
 
 /*

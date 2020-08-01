@@ -52,58 +52,60 @@ nav {
                 display: block;
                 text-decoration: none;
             }
-        } 
-    }
-}
-
-
-
-/* @import './variables.scss';
-
-.menuSection {
-    input[type="checkbox"], .menuIcon, .closeMenu {
-        position: absolute;  
-        right: 24px;
-    }
-
-    .closeMenu{
-        display: none;
-    }
-    
-    input[type="checkbox"] {
-        opacity: 0; 
-    }  
-}
-
-nav {
-    text-align: center;
-    display: none;
-    position: absolute;
-    z-index: 2;
-    top: 100px;
-    bottom: 0;
-    width: 100%;
-    background-color: $fondoMenu;
-    opacity: 100%;
-    color: $white;
-
-    ul{
-        list-style: none;
-        width: 100%;
-        font-size: 20px;
-
-        li{
-            height: 70px;
-            list-style: none;
-            display: block;
-
-            a{
-                color: $white;
-                margin-top: 40px;
-                display: block;
-                text-decoration: none;
+            a:link{
+                .menuSection > nav {
+                    display: none;
+                }
             }
         } 
     }
 }
- */
+
+@media all and (min-width: 376px) {
+    header > .menuSection {
+        width: 100%;
+        #menuIcon, #closeMenu {
+            display: none;
+        }
+
+        nav {
+            width: auto;
+            height: 90px;
+            position: relative;
+            background-color: $white;
+            display: block;
+            position: relative;
+            top: 0;
+            text-align: center;
+
+            ul > li {
+                display: inline-block;
+                padding-left: 20px;
+                font-family: $fuenteBody;
+
+                a{
+                    color: $purple;
+                    font-family: $fuenteBody;
+                    font-size: $menuDesktop;
+                    display: inline-block;
+                    text-decoration: none;
+                    padding-left: 20px;
+                    margin-top: 36px;
+                    font-weight: bold;
+
+                    &:hover{
+                        text-decoration: underline;
+                        text-decoration-color: $lightAqua;
+                        text-decoration-line: solid ;
+                        line-height: 2px;
+                    }
+
+                    &:active{
+                        color: $grayMedium;
+                    }
+                }
+            }
+
+        }
+    }
+}

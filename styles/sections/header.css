@@ -21,10 +21,18 @@
           align-items: center;
 }
 
-.header .menuSection #mobileLogo {
+.header .menuSection .mainLogo {
   height: 48.8px;
   width: 60.8px;
   margin-left: 22px;
+  font-weight: bold;
+  font-family: 'Roboto';
+}
+
+.header .menuSection .logoDesktop {
+  height: 60px;
+  width: 72px;
+  margin-left: 156px;
   font-weight: bold;
   font-family: 'Roboto';
 }
@@ -33,5 +41,27 @@
   width: 15px;
   height: 14px;
   pointer-events: none;
+}
+
+.header .menuSection .masOpciones {
+  margin-right: 156px;
+  border-radius: 50px;
+  width: 20%;
+  border: 1px #572EE5 solid;
+  height: 56px;
+  width: 56px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .menuSection .moreImg {
+  width: 19px;
+  height: 19px;
 }
 /*# sourceMappingURL=header.css.map */

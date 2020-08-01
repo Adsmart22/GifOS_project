@@ -1,8 +1,6 @@
 @import './variables.scss';
 
 .header{
-    //font-family: 'Roboto';
-    //font-size: 16px;
     width: $headerWidth;
     min-height: $headerHeight;
 
@@ -13,7 +11,7 @@
         justify-content: space-between;
         align-items: center;
 
-        #mobileLogo{
+        .mainLogo{
             height: $logo;
             width: $logoWidht;
             margin-left: 22px;
@@ -21,11 +19,36 @@
             font-family: 'Roboto';
         }
 
+        .logoDesktop{
+            height: $logoHeightDesk;
+            width: $logoWidhtDesk;
+            margin-left: 156px;
+            font-weight: bold;
+            font-family: 'Roboto';
+        }
         .menuIcon, .closeMenu{
             width: $menuIconWidth;
             height: $menuIconHeight;
             //margin-right: 24px;
             pointer-events: none;
         }
+
+        .masOpciones {
+            margin-right: 156px;
+            border-radius: 50px;
+            width: 20%;
+            border: 1px $purple solid;
+            height: 56px;
+            width: 56px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        .moreImg {
+            width: 19px;
+            height: 19px;
+        }
     }
+
+    
 }
