@@ -21,9 +21,20 @@
         
         <nav class="menu" id="burgerMenu">
           <ul>
-            <li><a href="#" id="nightModeOption" >Modo Nocturno</a><br>_____</li>
-            <li><a href="#favorites" id="favoritesOption" >Favoritos</a><br>_____</li>
-            <li><a href="#myGifos" id="myGifOption">Mis GifOS</a><br>_____</li>
+            <li>
+              <a href="#" id="nightModeOption" >Modo Nocturno</a> <hr> 
+            </li>
+            <li>
+              <a href="#favorites" id="favoritesOption" >Favoritos</a> <hr> 
+            </li>
+            <li>
+              <a href="#myGifos" id="myGifOption">Mis GifOS</a><hr>
+            </li>
+            <li>
+              <a href="">
+                <span class="moreOptions"></span>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -87,24 +98,67 @@
         </div>
         <button class="btnShowMore">VER MÁS</button>
       </aside>
+      <div class="createGif" id="ownGif">
+        <div class="containerVideo">
+          <img src="images/others/camara.svg" alt="camara" id ="camara"/>
+          <img src="images/others/element-luz-camara.svg" alt="lights" id="complemento" />
+          <div id="ownGifContainer" class="bodyText">
+            <h2 class="secundaryTitle">Aquí podrás crear tus propios <span>GIFOS</span></h2>
+            <p>¡Crea tus GIF en tan sólo 3 pasos!</p>
+            <p>(solo necesitas una cámara para grabar un video)</p>
+          </div>
+        </div>
+        <div class="panelRecord">
+          <div id="stepsGif"> 
+            <button class="btnSteps">1</button>
+            <button class="btnSteps">2</button>
+            <button class="btnSteps">3</button>
+          </div>
+          <img src="images/others/pelicula.svg" alt="movie" id="movie"/> 
+          <div class="purpleBar shortBar"></div>
+        </div>
+        <button class="btnShowMore gridButton">COMENZAR</button>       
+      </div>
       <aside class="graySection trendingSection">
         <h2 class="secundaryTitle">Trending GIFOS</h2>
         <p id="lastGifText">Mira los últimos GIFOS de nuestra comunidad</p>
         <div class="trendingContainer">
           <div id="controlLeft">
             <img src="./images/buttons/button-left.svg"/>
-
           </div>
           <div id="resultTrendingGif">
-            <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba"/>
+            <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba" id="imagenGif"/>
             <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba"/>
           </div>
           <div id="controlRight">
             <img src="./images/buttons/button-right.svg"/>
           </div>
         </div>
+
+        <!--Modal para visualización de imagenes-->
+
+        <div class="mainModal" id="modal">
+          <div class="modalContenido">
+            <div class="headerModal">
+              <img src="./images/icons/close.svg" alt="cerrar" id="btnCloseModal">
+            </div>
+            <div class="imgModal">
+              <span>
+                <img src="./images/buttons/button-left.svg" alt="left" id="btnLeft"/>
+              </span>
+              <img src="./images/icons/icon-search-mod-noc.svg" alt="gif" id="centralImg" />
+              <span>
+                <img src="./images/buttons/button-right.svg" alt="right" id="btnRight" />
+              </span> 
+            </div>
+            <div class="gifOptions">
+              <p>User <span id="titleGif">Titulo</span></p>
+              <img src="./images/icons/icon-favoritos.svg">
+              <img src="./images/icons/icon-download.svg"/>
+            </div>
+          </div>
+        </div>
       </aside>
-      
       <footer class="footer whiteSection">
           <aside>
             <div>
@@ -128,6 +182,7 @@
     
     <script src="./scripts/script.js"> </script>
     <script src="./scripts/ajustarPantalla.js"></script>
+    <script src="./scripts/manipularImagenes.js"></script>
   </body>
 
 </html>

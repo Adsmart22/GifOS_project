@@ -47,15 +47,18 @@ nav ul li {
   display: block;
 }
 
+nav ul li hr {
+  width: 30%;
+  margin: auto;
+  color: white;
+  margin-top: 1em;
+}
+
 nav ul li a {
   color: #FFFFFF;
   margin-top: 40px;
   display: block;
   text-decoration: none;
-}
-
-nav ul li a:link .menuSection > nav {
-  display: none;
 }
 
 @media all and (min-width: 376px) {
@@ -78,11 +81,14 @@ nav ul li a:link .menuSection > nav {
   header > .menuSection nav ul > li {
     display: inline-block;
     padding-left: 20px;
-    font-family: "Montserrat-Bold";
+    font-family: "Montserrat";
+  }
+  header > .menuSection nav ul > li hr {
+    display: none;
   }
   header > .menuSection nav ul > li a {
     color: #572EE5;
-    font-family: "Montserrat-Bold";
+    font-family: "Montserrat";
     font-size: 13px;
     display: inline-block;
     text-decoration: none;

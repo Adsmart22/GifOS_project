@@ -1,5 +1,6 @@
 @import './variables.scss';
 
+
 .menuSection {
     input[type="checkbox"], .menuIcon, .closeMenu {
         position: absolute;  
@@ -46,20 +47,22 @@ nav {
             list-style: none;
             display: block;
 
+            hr {
+                width: 30%;
+                margin: auto;
+                color: white;
+                margin-top: 1em;
+            }
+
             a{
                 color: $white;
                 margin-top: 40px;
                 display: block;
                 text-decoration: none;
             }
-            a:link{
-                .menuSection > nav {
-                    display: none;
-                }
-            }
         } 
     }
-}
+} 
 
 @media all and (min-width: 376px) {
     header > .menuSection {
@@ -82,6 +85,10 @@ nav {
                 display: inline-block;
                 padding-left: 20px;
                 font-family: $fuenteBody;
+
+                hr{
+                    display:none;
+                }
 
                 a{
                     color: $purple;
