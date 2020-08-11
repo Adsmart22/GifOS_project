@@ -88,6 +88,16 @@
 }
 
 @media all and (min-width:376px) {
+
+    .mainModal {
+        .modalContenido {
+            margin: 10% auto;
+        }
+        .imgModal{
+            height: 55vh;
+        }
+    }
+
     .mainModal > .modalContenido > .imgModal > span {
         display: block;
     }

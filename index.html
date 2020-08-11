@@ -22,18 +22,18 @@
         <nav class="menu" id="burgerMenu">
           <ul>
             <li>
-              <a href="#" id="nightModeOption" >Modo Nocturno</a> <hr> 
+              <a href="" id="nightModeOption" >Modo Nocturno</a> <hr> 
             </li>
             <li>
-              <a href="#favorites" id="favoritesOption" >Favoritos</a> <hr> 
+              <a href="" id="favoritesOption" >Favoritos</a> <hr> 
             </li>
             <li>
-              <a href="#myGifos" id="myGifOption">Mis GifOS</a><hr>
+              <a href="" id="myGifOption">Mis GifOS</a><hr>
             </li>
-            <li>
-              <a href="">
-                <span class="moreOptions"></span>
-              </a>
+            <li id="opcionalAdicional">     
+              <div class="masOpciones" id="moreOpt">
+                <img src="./images/buttons/button-crear-gifo.svg" class="moreImg" id="imgMore"/>
+              </div>
             </li>
           </ul>
         </nav>
@@ -119,6 +119,8 @@
         </div>
         <button class="btnShowMore gridButton">COMENZAR</button>       
       </div>
+
+      <!-- GIF trending -->
       <aside class="graySection trendingSection">
         <h2 class="secundaryTitle">Trending GIFOS</h2>
         <p id="lastGifText">Mira los últimos GIFOS de nuestra comunidad</p>
@@ -183,6 +185,6 @@
     <script src="./scripts/script.js"> </script>
     <script src="./scripts/ajustarPantalla.js"></script>
     <script src="./scripts/manipularImagenes.js"></script>
+    <script src="./scripts/menu.js"></script>
   </body>
-
 </html>

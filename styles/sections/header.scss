@@ -33,22 +33,8 @@
             pointer-events: none;
         }
 
-        .masOpciones {
-            margin-right: 156px;
-            border-radius: 50px;
-            width: 20%;
-            border: 1px $purple solid;
-            height: 56px;
-            width: 56px;
-            display: grid;
-            justify-content: center;
-            align-items: center;
+        #masOpciones{
+            display: none;
         }
-        .moreImg {
-            width: 19px;
-            height: 19px;
-        }
-    }
-
-    
+    }    
 }

@@ -47,4 +47,10 @@
 .trendingSection .trendingContainer #controlLeft, .trendingSection .trendingContainer #controlRight {
   display: none;
 }
+
+@media all and (min-width: 376px) {
+  .trendingContainer #controlLeft, .trendingContainer #controlRight {
+    display: block;
+  }
+}
 /*# sourceMappingURL=trendingSection.css.map */

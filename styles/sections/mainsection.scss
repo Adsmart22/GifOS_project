@@ -67,3 +67,27 @@ body > main {
         }
     }
 }
+
+@media all and (min-width: 376px) {
+    .main {
+        #mainTitle{
+            font-size: 35px;
+            width: 500px;
+        }
+        #searchImg{
+            width: 400px;
+            height: 200px;
+        }
+        .searchControl{
+            width: 551px;
+            height: 50px;
+
+            input {
+                width: 310px;
+                height: 22px;
+                margin-left: 10px;
+            }
+        }
+
+    }
+}

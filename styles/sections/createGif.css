@@ -104,4 +104,10 @@
 .createGif .gridButton {
   margin: auto;
 }
+
+@media all and (min-width: 375px) {
+  .createGif {
+    display: none;
+  }
+}
 /*# sourceMappingURL=createGif.css.map */

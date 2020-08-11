@@ -45,26 +45,8 @@
   pointer-events: none;
 }
 
-.header .menuSection .masOpciones {
-  margin-right: 156px;
-  border-radius: 50px;
-  width: 20%;
-  border: 1px #572EE5 solid;
-  height: 56px;
-  width: 56px;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.header .menuSection .moreImg {
-  width: 19px;
-  height: 19px;
+.header .menuSection #masOpciones {
+  display: none;
 }
 
 /* Variables for mobile*/
@@ -146,6 +128,7 @@ nav ul li a {
     position: relative;
     top: 0;
     text-align: center;
+    margin-right: 100px;
   }
   header > .menuSection nav ul > li {
     display: inline-block;
@@ -175,6 +158,25 @@ nav ul li a {
   }
   header > .menuSection nav ul > li a:active {
     color: #9CAFC3;
+  }
+  header > .menuSection nav ul > li .masOpciones {
+    display: block;
+    margin: auto;
+    border-radius: 50px;
+    border: 1px #572EE5 solid;
+    height: 56px;
+    width: 56px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  header > .menuSection nav ul > li .moreImg {
+    width: 19px;
+    height: 19px;
   }
 }
 
@@ -459,6 +461,26 @@ body > main .resultOfSearch .resultContainer .gifResult {
   height: 120px;
 }
 
+@media all and (min-width: 376px) {
+  .main #mainTitle {
+    font-size: 35px;
+    width: 500px;
+  }
+  .main #searchImg {
+    width: 400px;
+    height: 200px;
+  }
+  .main .searchControl {
+    width: 551px;
+    height: 50px;
+  }
+  .main .searchControl input {
+    width: 310px;
+    height: 22px;
+    margin-left: 10px;
+  }
+}
+
 /* Variables for mobile*/
 .trendingSection p {
   padding-top: 10px;
@@ -506,6 +528,12 @@ body > main .resultOfSearch .resultContainer .gifResult {
 
 .trendingSection .trendingContainer #controlLeft, .trendingSection .trendingContainer #controlRight {
   display: none;
+}
+
+@media all and (min-width: 376px) {
+  .trendingContainer #controlLeft, .trendingContainer #controlRight {
+    display: block;
+  }
 }
 
 /* Variables for mobile*/
@@ -682,6 +710,12 @@ body > main .resultOfSearch .resultContainer .gifResult {
   margin: auto;
 }
 
+@media all and (min-width: 375px) {
+  .createGif {
+    display: none;
+  }
+}
+
 /* Variables for mobile*/
 .mainModal {
   display: none;
@@ -787,6 +821,12 @@ body > main .resultOfSearch .resultContainer .gifResult {
 }
 
 @media all and (min-width: 376px) {
+  .mainModal .modalContenido {
+    margin: 10% auto;
+  }
+  .mainModal .imgModal {
+    height: 55vh;
+  }
   .mainModal > .modalContenido > .imgModal > span {
     display: block;
   }

@@ -19,21 +19,17 @@ function cambiarMenu(){
         imagenLogo.src = "./images/logos/logo-desktop.svg";
         imagenLogo.setAttribute("class", "logoDesktop" );
 
-        //anexar opciones imagen
-        masOpciones.src = "./images/buttons/button-crear-gifo.svg";
-        masOpciones.setAttribute("class", "moreImg");
-        contMasOpciones.append(masOpciones);
-        contMasOpciones.setAttribute("class", "masOpciones");
+        masOpcionesDiv = document.getElementById("moreOpt");
+        masOpcionesImg = document.getElementById("imgMore");
 
-        contMasOpciones.addEventListener('mouseover', () => {
-            contMasOpciones.style.backgroundColor = "#572EE5";
-            masOpciones.style.opacity="100%";
+        masOpcionesDiv.addEventListener('mouseover', () => {
+            masOpcionesDiv.style.backgroundColor = "#572EE5";
+            masOpcionesImg.src = "./images/buttons/button-crear-gifo-hover.svg";
         });
-        contMasOpciones.addEventListener('mouseout', () => {
-            contMasOpciones.style.backgroundColor = "#FFF";
-        });
-
-        container.append(contMasOpciones);
+        masOpcionesDiv.addEventListener('mouseout', () => {
+            masOpcionesDiv.style.backgroundColor = "#FFF";
+            masOpcionesImg.src = "./images/buttons/button-crear-gifo.svg"
+        })
     }
     else {
         nocturno.innerHTML = "Modo nocturno";

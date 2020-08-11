@@ -54,6 +54,8 @@
 
 @media all and (min-width: 376px) {
     .trendingContainer {
-        
+        #controlLeft, #controlRight {
+            display: block;
+        }
     }
 }
