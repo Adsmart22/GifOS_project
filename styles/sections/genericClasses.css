@@ -86,8 +86,7 @@
   width: 288px;
 }
 
-/*
-.favorites, .myGifos{
-    display: none;
-}*/
+.favorites, .myGifos, .resultOfSearch {
+  display: none;
+}
 /*# sourceMappingURL=genericClasses.css.map */

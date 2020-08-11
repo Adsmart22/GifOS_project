@@ -268,10 +268,10 @@ nav ul li a {
   width: 288px;
 }
 
-/*
-.favorites, .myGifos{
-    display: none;
-}*/
+.favorites, .myGifos, .resultOfSearch {
+  display: none;
+}
+
 /* Variables for mobile*/
 .footer {
   color: #000000;
@@ -531,8 +531,43 @@ body > main .resultOfSearch .resultContainer .gifResult {
 }
 
 @media all and (min-width: 376px) {
-  .trendingContainer #controlLeft, .trendingContainer #controlRight {
+  .trendingSection > .trendingContainer {
+    width: 80%;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-bottom: 3em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .trendingSection > .trendingContainer #controlLeft, .trendingSection > .trendingContainer #controlRight {
     display: block;
+    width: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #572EE5;
+  }
+  .trendingSection > .trendingContainer #resultTrendingGif {
+    width: 80%;
+    margin: auto;
   }
 }
 
