@@ -42,3 +42,19 @@
         font-family: $fuenteRegular;
     }
 }
+
+@mixin ajustarTextos(){
+    #mainTitle {
+        width: 400px;
+        height: 100px;
+        margin: 75px auto 30px auto;
+        font-size: 36px;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    #trendingText, #lastGifText{
+        width: 500px;
+    }
+
+}

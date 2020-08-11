@@ -3,6 +3,7 @@
 .purpleBar{
     background-color: $purple;
     height: 5px;
+    width: 100%;
 }
 
 .graySection{
@@ -35,6 +36,18 @@
     color: $purple;
     line-height: 30px;
     font-family: $fuenteBody;
+
+    span {
+        color: $aqua;
+    }
+}
+
+.bodyText {
+    font-family: $fuenteRegular;
+    font-size: 16px;
+    color: $black;
+    text-align: center;
+    line-height: 29px;
 }
 
 .btnShowMore{
@@ -48,9 +61,33 @@
     letter-spacing: 0;
     text-align: center;
     margin: 78px auto 78px auto;
+    font-family: $fuenteBody;
+
+    &:hover{
+        background-color: $purple;
+        color: $white;
+    }
 }
 
-/*
-.favorites, .myGifos{
+.btnSteps {
+    border: solid 1px $purple;
+    background-color: $white;
+    border-radius: 32px;
+    color: $purple;
+    width: 32px;
+    height: 32px;
+
+    &:hover{
+        background-color: $purple;
+        color: $white;
+    }
+}
+
+#trendingText, #lastGifText {
+    width: 288px;
+}
+
+
+.favorites, .myGifos, .resultOfSearch{
     display: none;
-}*/
+}

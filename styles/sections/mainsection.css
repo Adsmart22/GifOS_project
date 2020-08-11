@@ -56,7 +56,7 @@ body > main p {
   width: 236px;
   height: 75px;
   text-align: center;
-  font-family: "Montserrat-Medium";
+  font-family: "Montserrat";
   font-weight: normal;
 }
 
@@ -84,5 +84,25 @@ body > main .resultOfSearch .resultContainer {
 body > main .resultOfSearch .resultContainer .gifResult {
   width: 156px;
   height: 120px;
+}
+
+@media all and (min-width: 376px) {
+  .main #mainTitle {
+    font-size: 35px;
+    width: 500px;
+  }
+  .main #searchImg {
+    width: 400px;
+    height: 200px;
+  }
+  .main .searchControl {
+    width: 551px;
+    height: 50px;
+  }
+  .main .searchControl input {
+    width: 310px;
+    height: 22px;
+    margin-left: 10px;
+  }
 }
 /*# sourceMappingURL=mainsection.css.map */

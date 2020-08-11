@@ -1,66 +1,45 @@
-let clickMenu = document.getElementById("checkMenu");
-let menu = document.getElementById("burgerMenu");
-let btnOpen = document.getElementById("menuIcon");
-let btnClose = document.getElementById("closeMenu");
+/* recuperar opciones de menus */
+let masOpcionesDiv = document.getElementById("moreOpt");
+let modoOscuro = document.getElementById("nightModeOption");
+let favoritos = document.getElementById("favoritesOption");
+let misGif = document.getElementById("myGifOption");
 
-clickMenu.addEventListener("click", openCloseMenu);
+/* Recuperar las secciones */
 
-function openCloseMenu(){
-    if (clickMenu.checked == true) {
-        menu.style.display = "block";
-        menu.style.transition = "ease-out 0.4s linear;"
-        btnOpen.style.display = "none";
-        btnClose.style.display = "block";
-    }
-    else {
-        menu.style.display = "none";
-        btnOpen.style.display = "block";
-        btnClose.style.display = "none";
-    }
+let bloqueGrabar = document.getElementById("ownGif");
+let seccionBuscar = document.getElementById("main");
+let seccionFavoritos = document.getElementById("favorites");
+let seccionGifos = document.getElementById("myGifos");
+
+/* Elemento grabar */
+if(screen.width > 375){
+    masOpcionesDiv.addEventListener( "click" , () => {
+        cerrarBloques();
+        bloqueGrabar.style.display = "block";
+    });
+}
+else {
+    bloqueGrabar.style.display = "none";
 }
 
 
-let mainSection = document.getElementById("main");
-let favoriteSection = document.getElementById("favorites");
-let myGifosSection = document.getElementById("myGifos");
-//let searchGifsSection = document.getElementById("searchGifs");}
-let searchImage = document.getElementById("searchImg");
+/* favoritos.addEventListener( "click" , () => {
+    console.log("entra");
+    bloqueGrabar.style.display = "none";
+    seccionBuscar.style.display = "none";
+    seccionGifos.style.display = "none";
+    console.log("entra");
+    seccionFavoritos.style.display = "block";
+});
 
-function showSection(opcion){
-    mainSection.style.display ="none";
-    favoriteSection.style.display ="none";
-    myGifosSection.style.display ="none";
-   //searchGifsSection.style.display ="none";
+misGif.addEventListener( "click" , () => {
+    cerrarBloques();
+    //seccionGifos.style.display = "block";
+});  */ 
 
-    switch(opcion.id){
-        case "nightModeOption":
-            colapseMenu();
-            break;
-        case "favoritesOption":
-            favoriteSection.style.display = "block";
-            colapseMenu();
-            break;
-        case "myGifOption":
-            myGifosSection.style.display = "block";
-            colapseMenu();
-            break;
-        default:
-            mainSection.style.display ="block";
-    }
+function cerrarBloques(){
+    bloqueGrabar.style.display = "none";
+    seccionBuscar.style.display = "none";
+    seccionFavoritos.style.display = "none";
+    seccionGifos.style.display = "none";
 }
-
-function colapseMenu(){
-    menu.style.display = "none";
-    btnOpen.style.display = "block";
-    btnClose.style.display = "none";
-    searchImage.setAttribute("class", "imgBusqueda");
-}
-
-let logoStart = document.getElementById("logoStart");
-let reiniciar = () => {
-    favoriteSection.style.display ="none";
-    myGifosSection.style.display ="none";
-    //searchGifsSection.style.display ="none";
-    mainSection.style.display = "block";
-};
-logoStart.addEventListener("click", reiniciar);
