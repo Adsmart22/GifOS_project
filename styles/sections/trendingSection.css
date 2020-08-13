@@ -38,10 +38,25 @@
         }*/
 }
 
-.trendingSection .trendingContainer #resultTrendingGif img {
+.trendingSection .trendingContainer #resultTrendingGif {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow-x: auto;
+}
+
+.trendingSection .trendingContainer #resultTrendingGif .cardTrending {
   width: 243px;
   height: 187px;
   margin-left: 22px;
+}
+
+.trendingSection .trendingContainer #resultTrendingGif::-webkit-scrollbar {
+  display: none;
 }
 
 .trendingSection .trendingContainer #controlLeft, .trendingSection .trendingContainer #controlRight {

@@ -23,11 +23,19 @@
         flex-wrap: wrap column;
 
         #resultTrendingGif {
-            img{
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+
+            .cardTrending{
                 width: $trendingImgWidth;
                 height: $trendingImgHeight;
                 margin-left: 22px;
             }
+        }
+
+        #resultTrendingGif::-webkit-scrollbar{
+            display: none;
         }
 
         #controlLeft, #controlRight {
