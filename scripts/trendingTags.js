@@ -9,9 +9,6 @@ async function obtenerTagsTrending () {
     let response = await fetch(endpointTrendingTag + "?api_key="+ apiKey);
     let trendingInfo = await response.json();
     let status = trendingInfo.meta.status;
-
-    /* console.log(status);
-    console.log(trendingInfo); */
     
     try {
         if (status === 200) {
@@ -39,9 +36,11 @@ async function obtenerTagsTrending () {
 
 function actualizarTagsFont(tags){
     let texto = document.getElementById("trendingText");
+    texto.innerHTML = tags;
     /* console.log("Trending text" +texto);
     console.log("Arrays tags" + tags); */
-    texto.innerHTML = tags;
+
+    //console.log("Trending text" + tags.length)
 }
 
 obtenerTagsTrending ();

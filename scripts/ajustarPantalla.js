@@ -43,14 +43,30 @@ function cambiarMenu(){
 cambiarMenu(); 
 
 let iconFB = document.getElementById("fb");
-let fbLink = document.getElementById("fbLink");
+let iconTw = document.getElementById("tw");
+let iconInst = document.getElementById("inst");
 
-fbLink.addEventListener( "mouseover" , () => {
-    fbLink.style.backgroundColor = "#FFF";
+iconFB.addEventListener( "mouseover" , () => {
     iconFB.src = "./images/socialNetworks/icon_facebook_hover.svg";
 }); 
 
-fbLink.addEventListener( "mouseoot" , () => {
-    fbLink.style.backgroundColor = "#FFF";
+iconFB.addEventListener( "mouseout" , () => {
     iconFB.src = "./images/socialNetworks/icon_facebook.svg";
 }); 
+
+iconTw.addEventListener( "mouseover" , () => {
+    iconTw.src = "./images/socialNetworks/icon-twitter-hover.svg";
+}); 
+
+iconTw.addEventListener( "mouseout" , () => {
+    iconTw.src = "./images/socialNetworks/icon-twitter.svg";
+}); 
+
+iconInst.addEventListener( "mouseover" , () => {
+    iconInst.src = "./images/socialNetworks/icon_instagram_hover.svg";
+}); 
+
+iconInst.addEventListener( "mouseout" , () => {
+    iconInst.src = "./images/socialNetworks/icon_instagram.svg";
+}); 
+

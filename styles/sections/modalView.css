@@ -17,7 +17,7 @@
 .mainModal .modalContenido {
   margin: 20% auto;
   position: relative;
-  width: 90%;
+  width: 80%;
 }
 
 .mainModal .modalContenido .headerModal {
@@ -42,7 +42,7 @@
           align-items: center;
 }
 
-.mainModal .modalContenido .imgModal #centralImg {
+.mainModal .modalContenido .imgModal .centralImg {
   width: 318px;
   height: 245px;
   margin: 20% auto;
@@ -80,10 +80,12 @@
 }
 
 .mainModal .modalContenido .gifOptions p {
+  margin-top: -15px;
   width: 80%;
   font-family: 'Roboto-Regular';
   font-size: 15px;
   color: black;
+  text-align: left;
 }
 
 .mainModal .modalContenido .gifOptions p span {
@@ -100,14 +102,32 @@
 .mainModal .modalContenido .gifOptions img {
   width: 20px;
   height: 18px;
+  margin-left: 10px;
 }
 
 @media all and (min-width: 376px) {
   .mainModal .modalContenido {
-    margin: 10% auto;
+    margin: 5% auto;
   }
-  .mainModal .imgModal {
+  .mainModal .modalContenido .headerModal {
+    height: 80px;
+  }
+  .mainModal .modalContenido .headerModal img {
+    width: 15px;
+    height: 15px;
+  }
+  .mainModal .modalContenido .imgModal {
     height: 55vh;
+  }
+  .mainModal .modalContenido .imgModal .centralImg {
+    width: 650px;
+    height: 385px;
+  }
+  .mainModal .modalContenido .gifOptions {
+    height: 80px;
+  }
+  .mainModal .modalContenido .gifOptions p {
+    margin-top: 10px;
   }
   .mainModal > .modalContenido > .imgModal > span {
     display: block;

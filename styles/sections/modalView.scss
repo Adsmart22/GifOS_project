@@ -16,7 +16,7 @@
     .modalContenido {
         margin: 20% auto;
         position: relative;
-        width: 90%;
+        width: 80%;
 
         .headerModal{
             text-align: right;
@@ -31,7 +31,7 @@
             justify-content: space-between;
             align-items: center;
 
-            #centralImg {
+            .centralImg {
                 width: 318px;
                 height: 245px;
                 margin: 20% auto;
@@ -63,10 +63,12 @@
             align-items: center;
 
             p{
+                margin-top: -15px;
                 width: 80%;
                 font-family: 'Roboto-Regular';
                 font-size: 15px;
                 color: black;
+                text-align: left;
 
                 span{
                     font-family: 'Montserrat-Bold';
@@ -75,28 +77,51 @@
                 }
                 span::before { 
                     content: '\A'; 
-                    white-space: pre;
+                    white-space: pre;   
                 }
             }
 
             img{
                 width: 20px;
                 height: 18px;
+                margin-left: 10px;
             }
         }
     }
 }
 
 @media all and (min-width:376px) {
-
     .mainModal {
         .modalContenido {
-            margin: 10% auto;
-        }
-        .imgModal{
-            height: 55vh;
+            margin: 5% auto;
+
+            .headerModal{
+                height: 80px;
+                img {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+
+            .imgModal{
+                height: 55vh;
+    
+                .centralImg{
+                    width: 650px;
+                    height: 385px;
+                }
+            }
+
+            .gifOptions{
+                height: 80px;
+    
+                p{
+                    margin-top: 10px;
+                }
+            }
         }
     }
+        
 
     .mainModal > .modalContenido > .imgModal > span {
         display: block;
