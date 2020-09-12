@@ -129,26 +129,18 @@ conectar();
 
 let btnFavoritos = document.getElementById("btnFavoritos");
 
-/* btnFavoritos.addEventListener("mouseover", () => {
-    btnFavoritos.src = "./images/icons/icon-fav-hover.svg";
-});
-
-btnFavoritos.addEventListener("mouseout", () => {
-    btnFavoritos.src = "./images/icons/icon-fav-active.svg";
-});
- */
 btnFavoritos.addEventListener("click", () => {
     let rutaImg = (btnFavoritos.src).slice(49, 68);
-    //let imagenSelecionada = document.getElementsByClassName("centralImg");
+    let imagenSelecionada = document.getElementsByClassName("centralImg");
 
     if( rutaImg == 'icon-favoritos.svg') {
         // Si ya está seleccionado, está eliminando de favoritos
         console.error("ya está seleccionada");
-        //deleteFavorite( imagenSelecionada[0].id );
+        deleteFavorite( imagenSelecionada[0].id );
     }
     else {
         // Si es la primera vez, la agrega como favoritos
-        let imagenSelecionada = document.getElementsByClassName("centralImg");
+        //let imagenSelecionada = document.getElementsByClassName("centralImg");
         btnFavoritos.src = "./images/icons/icon-favoritos.svg";
         console.warn("a penas se va a seleccionar");
 
@@ -172,39 +164,35 @@ function isFavorite(cardId) {
         let favoritos = localStorage.getItem("favoritos") ;
         let arregloLocal = JSON.parse(favoritos);
 
-        console.warn("Tamaño arreglo: " + arregloLocal.length);
+        //console.warn("Tamaño arreglo local: " + arregloLocal.length);
 
         for (let i=0; i < arregloLocal.length; i+=1){
-            console.log(arregloLocal[i]);
-
             if(cardId === arregloLocal[i]) {
-                console.log("Encontré elemento: " + cardId);
+                //console.log("Encontré elemento en local: " + cardId);
                 btnFavoritos.src = "./images/icons/icon-favoritos.svg";
+                break;
             }
             else {
+                //console.log("No encontró: " + cardId);
                 btnFavoritos.src = "./images/icons/icon-fav-active.svg";
             }
         }
     }
 }
 
-/* function deleteFavorite(cardId){
+function deleteFavorite(cardId){
     //Permite eliminar una gif de mis favoritos
-    console.info("Borrado: " + cardId);
-    console.warn("Antes de borrar: " + arregloLocal );
 
-    let favoritos = localStorage.getItem("favoritos") ;
-    let arregloLocal = JSON.parse(favoritos);
+    console.log(arregloFavoritos);
 
-    for (let i=0; i < arregloLocal.length; i+=1){
-        //console.log(arregloLocal[i]);
-
-        if(cardId === arregloLocal[i]) {
-            arregloLocal.pop(cardId);
+    for (let i=0; i < arregloFavoritos.length; i+=1){
+        if(cardId === arregloFavoritos[i]) {
+            arregloFavoritos.pop(cardId);
+            btnFavoritos.src = "./images/icons/icon-fav-active.svg";
+            break;
         }
     }
 
-    localStorage.setItem('favoritos', JSON.stringify(arregloLocal));
-    console.warn("Después de borrar: " + arregloLocal );
-} */
+    localStorage.setItem('favoritos', JSON.stringify(arregloFavoritos));
+}
 
