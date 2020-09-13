@@ -223,6 +223,7 @@ nav ul li a {
   color: #50E3C2;
 }
 
+.tr
 .bodyText {
   font-family: "Roboto";
   font-size: 16px;
@@ -281,6 +282,41 @@ nav ul li a {
 .gifResult {
   width: 156px;
   height: 120px;
+}
+
+.noContent {
+  width: 50%;
+  margin: auto;
+  margin-top: 2.5em;
+  display: none;
+}
+
+.noContent div {
+  margin: auto;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  background-color: #F3F5F8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.noContent p {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  color: #50E3C2;
+  line-height: 30px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  margin-top: 1em;
 }
 
 /* Variables for mobile*/
@@ -660,25 +696,22 @@ body > main .resultOfSearch #resultContainer {
   height: 21px;
 }
 
-.favorites .favoriteItems {
+.favorites #favoriteItems {
   width: 90%;
-  min-height: 720px;
   margin: auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (158px)[2];
-      grid-template-columns: repeat(2, 158px);
-  -ms-grid-rows: (1fr)[6];
-      grid-template-rows: repeat(6, 1fr);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 0.5em;
-  grid-row-gap: 0.5em;
+  grid-row-gap: 1em;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 46px;
 }
 
-.favorites .favoriteItems img {
+.favorites #favoriteItems img {
   width: 158px;
   height: 120px;
 }
