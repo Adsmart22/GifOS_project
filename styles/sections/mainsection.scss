@@ -87,19 +87,27 @@ body > main {
     .resultOfSearch{
         width: 100%;
 
-        .resultContainer{
-            margin-top: 46px;
+        #sinResulutados{
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            margin-top: 20px;
+            display: none;
+        }
+
+        #resultContainer{
+            padding-top: 46px;
             width: 90%;
             margin: auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr) ;
             column-gap: 5px;
+            row-gap: 5px;
 
-
-            .gifResult{
+            /* .gifResult{
                 width: $resultWidth;
                 height: $resultHeight;
-            }
+            } */
         }
     }
 }
@@ -116,7 +124,7 @@ body > main {
         }
         .searchControl{
             width: 551px;
-            height: 50px;
+            //height: 50px;
 
             input {
                 width: 310px;

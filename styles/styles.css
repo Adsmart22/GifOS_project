@@ -272,6 +272,17 @@ nav ul li a {
   display: none;
 }
 
+.cardTrending {
+  width: 243px;
+  height: 187px;
+  margin-left: 22px;
+}
+
+.gifResult {
+  width: 156px;
+  height: 120px;
+}
+
 /* Variables for mobile*/
 .footer {
   color: #000000;
@@ -480,8 +491,16 @@ body > main .resultOfSearch {
   width: 100%;
 }
 
-body > main .resultOfSearch .resultContainer {
-  margin-top: 46px;
+body > main .resultOfSearch #sinResulutados {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: 20px;
+  display: none;
+}
+
+body > main .resultOfSearch #resultContainer {
+  padding-top: 46px;
   width: 90%;
   margin: auto;
   display: -ms-grid;
@@ -490,11 +509,11 @@ body > main .resultOfSearch .resultContainer {
       grid-template-columns: repeat(2, 1fr);
   -webkit-column-gap: 5px;
           column-gap: 5px;
-}
-
-body > main .resultOfSearch .resultContainer .gifResult {
-  width: 156px;
-  height: 120px;
+  row-gap: 5px;
+  /* .gifResult{
+                width: $resultWidth;
+                height: $resultHeight;
+            } */
 }
 
 @media all and (min-width: 376px) {
@@ -508,7 +527,6 @@ body > main .resultOfSearch .resultContainer .gifResult {
   }
   .main .searchControl {
     width: 551px;
-    height: 50px;
   }
   .main .searchControl input {
     width: 310px;
@@ -576,12 +594,11 @@ body > main .resultOfSearch .resultContainer .gifResult {
       -ms-flex-direction: row;
           flex-direction: row;
   overflow-x: auto;
-}
-
-.trendingSection .trendingContainer #resultTrendingGif .cardTrending {
-  width: 243px;
-  height: 187px;
-  margin-left: 22px;
+  /* .cardTrending{
+                width: $trendingImgWidth;
+                height: $trendingImgHeight;
+                margin-left: 22px;
+            } */
 }
 
 .trendingSection .trendingContainer #resultTrendingGif::-webkit-scrollbar {

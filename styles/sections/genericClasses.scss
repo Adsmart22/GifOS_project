@@ -91,3 +91,14 @@
 .favorites, .myGifos, .resultOfSearch{
     display: none;
 }
+
+.cardTrending{
+    width: $trendingImgWidth;
+    height: $trendingImgHeight;
+    margin-left: 22px;
+}
+
+.gifResult{
+    width: $resultWidth;
+    height: $resultHeight;
+}

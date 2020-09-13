@@ -47,12 +47,11 @@
       -ms-flex-direction: row;
           flex-direction: row;
   overflow-x: auto;
-}
-
-.trendingSection .trendingContainer #resultTrendingGif .cardTrending {
-  width: 243px;
-  height: 187px;
-  margin-left: 22px;
+  /* .cardTrending{
+                width: $trendingImgWidth;
+                height: $trendingImgHeight;
+                margin-left: 22px;
+            } */
 }
 
 .trendingSection .trendingContainer #resultTrendingGif::-webkit-scrollbar {

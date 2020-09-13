@@ -46,7 +46,7 @@
           <span class="searchControl" id="panelControl">
             <img src="./images/icons/close.svg" alt="Cerrar" id="cerrarBusqueda" />
             <input type="text" maxlength="70" placeholder="Busca GIFOS y más" id="barraBuscadora">
-            <img src="./images/icons/icon-search.svg" alt="Búsqueda" />
+            <img src="./images/icons/icon-search.svg" alt="Búsqueda" id="btnPanelBusqueda" />
             <ul id="coincidencias">
             </ul>
           </span>          
@@ -55,9 +55,10 @@
           <p id="trendingText"></p>
           <section class="resultOfSearch">
             <h2 class="secundaryTitle" id="result">Resultado</h2>
-            <div class="resultContainer">
-              <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba" class="gifResult">
-              <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba" class="gifResult"/>
+            <img src="./images/icons/icon-busqueda-sin-resultado.svg" id="sinResulutados"/>
+            <div id="resultContainer">
+              <!-- <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba" class="gifResult">
+              <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba" class="gifResult"/> -->
             </div>
           </section>
           <button class="btnShowMore">VER MÁS</button>               
@@ -198,6 +199,7 @@
     <script src="./scripts/trendingTags.js" type="module"></script>
     <script src="./scripts/manipularImagenes.js"></script>
     <script src="./scripts/autocompleteConection.js" type="module"></script>
+    <script src="./scripts/searchConection.js" type="module"></script>
     <script src="./scripts/modalFuncionalidad.js" type="module"></script>
   </body>
 </html>
