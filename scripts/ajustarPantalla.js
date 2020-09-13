@@ -1,5 +1,5 @@
 
-function cambiarMenu(){
+//function cambiarMenu(){
     let nocturno = document.getElementById("nightModeOption");
     let favoritos = document.getElementById("favoritesOption");
     let myGif = document.getElementById("myGifOption");
@@ -38,9 +38,9 @@ function cambiarMenu(){
         imagenLogo.src = "./images/logos/logo-mobile.svg";
         imagenLogo.setAttribute("class", "mainLogo" );
     }
-}
+//}
 
-cambiarMenu(); 
+//cambiarMenu(); 
 
 let iconFB = document.getElementById("fb");
 let iconTw = document.getElementById("tw");
