@@ -12,14 +12,13 @@ let limitSearch = 12;
 
 
 btnEjecutarBusqueda.addEventListener("click", () => {
-    console.info(inputBusqueda.value);
     valorInput = inputBusqueda.value;
+    sessionStorage.setItem('addResult', '0');
     obtenerResultado(valorInput);
 });
 
 inputBusqueda.addEventListener('keydown', (event) => {
     if (event.which === 13 || event.key === 'Enter' ){
-        console.info("Desde el teclado" + inputBusqueda.value);
         valorInput = inputBusqueda.value;
         obtenerResultado(valorInput);
     }
@@ -49,16 +48,18 @@ async function obtenerResultado(itemBusqueda) {
 }
 
 
-function crearResultadoBusqueda(resultadoBusqueda, itemBusqueda){
-    limpiarGrid();
+function crearResultadoBusqueda(resultadoBusqueda, itemBusqueda){    
     let panelResultado = document.getElementsByClassName("resultOfSearch");
     let titulo = document.getElementById("result");
     let imgNoRes = document.getElementById("sinResulutados");
 
+    if ( sessionStorage.getItem('addResult') === '0' ){
+        limpiarGrid();
+    }
+
     imgNoRes.style.display = "none";
     panelResultado[0].style.display = "block";
     titulo.innerText = itemBusqueda;
-    console.log(resultadoBusqueda);
 
     /* Se valida información y se crean tarjetas */
 
@@ -92,6 +93,7 @@ function crearResultadoBusqueda(resultadoBusqueda, itemBusqueda){
             console.error(error);
         }
 
+        sessionStorage.setItem('indiceBusqueda', '12');
         crearGiF(idGif, url, name, title, "resultContainer", "gifResult");
     }
 }
@@ -112,4 +114,35 @@ function limpiarGrid() {
     while( grid.firstChild ) {
         grid.removeChild( grid.firstChild );
     }
+
+    sessionStorage.setItem('indiceBusqueda', '0');
 }
+
+/* EVENTOS Y FUNCIONALIDAD PARA VER MAS */
+
+ let btnVerMas = document.getElementById("masBusqueda");
+
+ btnVerMas.addEventListener("click", () => {
+     verMasGif(inputBusqueda.value);
+ });
+
+ async function verMasGif(itemBusqueda){
+    let newResponse = await fetch(endpointSearch + "?api_key="+ apiKey + "&q=" + itemBusqueda + "&limit=" + limitSearch + "&offset=" + sessionStorage.getItem('indiceBusqueda'));
+    let gifNewInfo = await newResponse.json();
+    let status = gifNewInfo.meta.status;
+
+    try {
+        if (status === 200 && gifNewInfo.data.length > 0) {
+            sessionStorage.setItem('addResult', '1');
+            crearResultadoBusqueda(gifNewInfo.data, itemBusqueda);
+        }else if (status === 404){
+            throw new Error("Error - recurso no encontrado");
+        }
+        else {
+            throw new Error("Error de conexión, intente más tarde")
+        }
+    }catch (error) {
+        console.error(error);
+    }
+ }
+ 

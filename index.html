@@ -61,28 +61,24 @@
               <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba" class="gifResult"/> -->
             </div>
           </section>
-          <button class="btnShowMore">VER MÁS</button>               
+          <button class="btnShowMore" id="masBusqueda">VER MÁS</button>               
       </main>
 
       <!-- Favoritos -->
       <aside class="whiteSection favorites" id="favorites">
         <img src="./images/icons/icon-favoritos.svg" alt="favoritos">
         <h2 class="secundaryTitle">Favoritos</h2>
-        <div class="favoriteItems">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
+        <div class="noContent">
+          <div>
+            <img src="images/icons/icon-favoritos.svg" />
+          </div>
+          <p>¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!</p>
         </div>
-        <button class="btnShowMore">VER MÁS</button>
+        <div id="favoriteItems">
+          <!-- <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
+          <img src="./images/dummies/archivoDummy.PNG" alt="prueba"> -->
+        </div>
+        <button class="btnShowMore" id="masFavoritos">VER MÁS</button>
       </aside>
 
       <!-- Mis Gifos -->
@@ -192,7 +188,6 @@
           <div class="purpleBar"></div>          
       </footer>
     
-    <script src="./scripts/script.js"> </script>
     <script src="./scripts/ajustarPantalla.js"></script>  
     <script src="./scripts/menu.js"></script>
     <script src="./scripts/trendingConexion.js" type="module"></script>
@@ -200,6 +195,7 @@
     <script src="./scripts/manipularImagenes.js"></script>
     <script src="./scripts/autocompleteConection.js" type="module"></script>
     <script src="./scripts/searchConection.js" type="module"></script>
+    <script src="./scripts/favoritos.js" type="module"> </script>
     <script src="./scripts/modalFuncionalidad.js" type="module"></script>
   </body>
 </html>

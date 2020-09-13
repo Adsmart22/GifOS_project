@@ -1,7 +1,5 @@
 import { arregloFavoritos } from './variables.js';
 
-
-let contador = 0;
 let modal = document.getElementById("modal");
 const imagenModal = document.getElementById("centralImg");
 const imgUser = document.getElementById("imgUser");
@@ -28,7 +26,6 @@ export function crearGiF(idGif, urlGif, name, title, idContainer, className){
 
         isFavorite(card.id)
     });
-    contador+=1;
 }
 
 /* Eventos para manejar favoritos */
