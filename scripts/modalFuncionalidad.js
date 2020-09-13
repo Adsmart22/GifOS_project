@@ -6,14 +6,14 @@ let modal = document.getElementById("modal");
 const imagenModal = document.getElementById("centralImg");
 const imgUser = document.getElementById("imgUser");
 
-export function crearGiF(idGif, urlGif, name, title){
-    let contenedor = document.getElementById("resultTrendingGif");
+export function crearGiF(idGif, urlGif, name, title, idContainer, className){    
+    let contenedor = document.getElementById(idContainer);
     let card = document.createElement("img");
 
     card.src = urlGif;
     card.id = idGif;
     card.alt = title;
-    card.setAttribute("class", "cardTrending");
+    card.setAttribute("class", className);
     contenedor.append(card);
 
     card.addEventListener("click", () => {

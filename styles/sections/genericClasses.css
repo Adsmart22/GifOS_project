@@ -89,4 +89,15 @@
 .favorites, .myGifos, .resultOfSearch {
   display: none;
 }
+
+.cardTrending {
+  width: 243px;
+  height: 187px;
+  margin-left: 22px;
+}
+
+.gifResult {
+  width: 156px;
+  height: 120px;
+}
 /*# sourceMappingURL=genericClasses.css.map */
