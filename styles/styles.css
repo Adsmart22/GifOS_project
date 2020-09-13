@@ -450,6 +450,8 @@ body > main .searchControl img {
 
 body > main .searchControl #cerrarBusqueda {
   display: none;
+  width: 14px;
+  height: 14px;
 }
 
 body > main p {
