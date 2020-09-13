@@ -9,13 +9,8 @@ let txtBusqueda = document.getElementById("barraBuscadora");
 //Cuando cambie el input, hacer la búsqueda
 
 txtBusqueda.addEventListener("keydown", () => {
-    /* console.log("Entra");
-    console.log("Nuevo valor: " + txtBusqueda.value ); */
-
     conectarAutocompetar();
-
 });
-
 
 async function conectarAutocompetar(){
     let response = await fetch(endpointAutocomplete + "?api_key="+ apiKey + "&q=" + txtBusqueda.value);
@@ -24,7 +19,6 @@ async function conectarAutocompetar(){
 
     try {
         if (status === 200 && tagsAuto.data.length > 0) {
-            console.log("Con resultados");
             limpiarLista();
             actualizarTags(tagsAuto.data);
         }
@@ -46,33 +40,49 @@ function limpiarLista(){
     let div;
 
     for(let i=0; div=numeroItems[i]; i++) {
-        console.log("elimina");
         div.parentNode.removeChild(div);
     }
-    
-    console.log(lista.outerHTML);
 }
 
-function actualizarTags(valores) {
-    let panelBusqueda = document.getElementById('panelControl');
-    
+let panelBusqueda = document.getElementById('panelControl');
+let btnCerrar = document.getElementById('cerrarBusqueda');
 
-    
+function actualizarTags(valores) {
+    panelBusqueda.style.flexDirection = "row-reverse";
+    btnCerrar.style.display = "block";
+
     let lista = document.getElementById("coincidencias");
 
     for ( let a=0; a < valores.length ; a+=1 ) {
         let listContainer = document.createElement("div");
         let imgLista = document.createElement("img");
         let itemList = document.createElement("li");
-
+        
         itemList.innerText = valores[a].name;
-        imgLista.src = "./images/icons/icon-search.svg";
+        imgLista.src = "./images/icons/icon-search-mod-noc.svg";
+
+        listContainer.addEventListener("click", () => {
+            actualizarTexto(itemList.innerText, "actualizar");
+        });
+
+        btnCerrar.addEventListener("click", () => {
+            actualizarTexto("", "borrar");
+        })
+
         listContainer.append(imgLista);
         listContainer.append(itemList);
         lista.append(listContainer);
     }
 }
 
-
-
-/* EVENTOS Y FUNCIONALIDAD PARA BUSQUEDA */
+function actualizarTexto(texto, accion) {
+    if (accion === "borrar") {
+        txtBusqueda.value="";
+    }else {
+        txtBusqueda.value = texto;
+    }
+    
+    limpiarLista();
+    panelBusqueda.style.flexDirection = "row";
+    btnCerrar.style.display = "none";
+}
