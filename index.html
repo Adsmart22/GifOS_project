@@ -43,15 +43,16 @@
       <main class="whiteSection main" id="main">
           <h1 id="mainTitle">Inspírate, busca, guarda y crea los mejores <span>GIFOS</span> </h1>
           <img src="./images/others/ilustra_header.svg" alt="Ilustra" class="imgBusqueda" id="searchImg"/>
-          <span class="searchControl">
-            <input type="text" maxlength="70" placeholder="Busca GIFOS y más">
+          <span class="searchControl" id="panelControl">
+            <img src="./images/icons/close.svg" alt="Cerrar" id="cerrarBusqueda" />
+            <input type="text" maxlength="70" placeholder="Busca GIFOS y más" id="barraBuscadora">
             <img src="./images/icons/icon-search.svg" alt="Búsqueda" />
+            <ul id="coincidencias">
+            </ul>
           </span>          
           
           <span class="secundaryTitle">Trending</span>
-          <p id="trendingText">
-            Reactions, Entertainment, Sports, Stickers, Artist
-          </p>
+          <p id="trendingText"></p>
           <section class="resultOfSearch">
             <h2 class="secundaryTitle" id="result">Resultado</h2>
             <div class="resultContainer">
@@ -196,5 +197,7 @@
     <script src="./scripts/trendingConexion.js" type="module"></script>
     <script src="./scripts/trendingTags.js" type="module"></script>
     <script src="./scripts/manipularImagenes.js"></script>
+    <script src="./scripts/searchConection.js" type="module"></script>
+    <script src="./scripts/modalFuncionalidad.js" type="module"></script>
   </body>
 </html>
