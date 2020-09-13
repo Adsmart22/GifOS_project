@@ -391,7 +391,6 @@ body > main .searchControl {
   border-radius: 27px;
   background-color: #FFFFFF;
   border: #572EE5 1px solid;
-  height: 50px;
   width: 334px;
   margin: auto;
   display: -webkit-box;
@@ -409,16 +408,48 @@ body > main .searchControl {
           align-items: center;
 }
 
+body > main .searchControl #coincidencias {
+  width: 80%;
+  list-style-type: none;
+  padding-bottom: 15px;
+}
+
+body > main .searchControl #coincidencias div {
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 7px;
+}
+
+body > main .searchControl #coincidencias div img {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  margin-top: 0;
+}
+
 body > main .searchControl input {
-  border: none;
-  width: 215px;
-  height: 24px;
-  margin-left: 40px;
+  border: 0;
+  outline: none;
+  width: 200px;
+  min-height: 24px;
+  margin-top: 10px;
 }
 
 body > main .searchControl img {
   width: 24px;
   height: 24px;
+  margin-top: 10px;
+}
+
+body > main .searchControl #cerrarBusqueda {
+  display: none;
 }
 
 body > main p {
@@ -430,6 +461,12 @@ body > main p {
   text-align: center;
   font-family: "Montserrat";
   font-weight: normal;
+}
+
+body > main p ul > li {
+  display: inline-block;
+  list-style-type: none;
+  line-height: 25px;
 }
 
 body > main span {
@@ -475,6 +512,17 @@ body > main .resultOfSearch .resultContainer .gifResult {
     width: 310px;
     height: 22px;
     margin-left: 10px;
+  }
+  .main p {
+    width: 500px;
+    height: 75px;
+  }
+  .main p ul {
+    width: 500px;
+    margin: auto;
+  }
+  .main p ul li {
+    cursor: pointer;
   }
 }
 

@@ -1,6 +1,8 @@
 /* Importar variables */
 
 import { endpointTrending, apiKey, tituloGenerico, nombreGenerico, arregloFavoritos } from './variables.js';
+import {crearGiF} from './modalFuncionalidad.js';
+
 
 /* Se agregan eventos a los botones */
 
@@ -92,7 +94,9 @@ async function conectar () {
     }
 };
 
-let contador = 0;
+conectar();
+
+/* let contador = 0;
 let modal = document.getElementById("modal");
 const imagenModal = document.getElementById("centralImg");
 const imgUser = document.getElementById("imgUser");
@@ -125,7 +129,7 @@ function crearGiF(idGif, urlGif, name, title){
 conectar();
 
 
-/* Eventos para manejar favoritos */
+// Eventos para manejar favoritos 
 
 let btnFavoritos = document.getElementById("btnFavoritos");
 
@@ -194,5 +198,5 @@ function deleteFavorite(cardId){
     }
 
     localStorage.setItem('favoritos', JSON.stringify(arregloFavoritos));
-}
+} */
 
