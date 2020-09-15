@@ -6,17 +6,44 @@ import {crearGiF} from './modalFuncionalidad.js';
 /* AGREGAR EVENTOS A BOTONES */
 
 let favoritosMenu = document.getElementById("favoritosOpt");
-let favoritosLocal = localStorage.getItem("favoritos") ;
-let arregloLocal = JSON.parse(favoritosLocal);
+/* let favoritosLocal = localStorage.getItem("favoritos") ;
+let arregloLocal = JSON.parse(favoritosLocal); */
+let favoritosLocal ;
+let arregloLocal ;
 
 favoritosMenu.addEventListener("click", () => {
-    for(let i=0; i < arregloLocal.length; i+=1) {
-        obtenerGif(arregloLocal[i]);
-        sessionStorage.setItem('numFav', i);
+    limpiarGrid();
+    inicializarValores();
+
+    if(!favoritosLocal || arregloLocal.length === 0){
+        console.log("No hay favoritos");
+        let panelNoFav = document.getElementById("noFavoritos");
+        panelNoFav.style.display = 'block';
+    }{
+        for(let i=0; i < arregloLocal.length; i+=1) {
+            obtenerGif(arregloLocal[i]);
+            sessionStorage.setItem('numFav', i);
+        }
     }
 });
 
 /* RECUPERAR LOCAL STORAGE Y CONECTAR API */
+
+function inicializarValores(){
+    favoritosLocal = localStorage.getItem("favoritos") ;
+    arregloLocal = JSON.parse(favoritosLocal);
+}
+
+function limpiarGrid() {
+    let grid = document.getElementById("favoriteItems");
+    let panelNoFav = document.getElementById("noFavoritos");
+
+    while( grid.firstChild ) {
+        grid.removeChild( grid.firstChild );
+    }
+
+    panelNoFav.style.display = 'none';
+}
 
 async function obtenerGif(idGif) {
     let response = await fetch(endpointGifById + idGif + "?api_key="+ apiKey);

@@ -77,7 +77,7 @@ nav ul li a {
     position: relative;
     top: 0;
     text-align: center;
-    margin-right: 100px;
+    right: 100px;
   }
   header > .menuSection nav ul > li {
     display: inline-block;
