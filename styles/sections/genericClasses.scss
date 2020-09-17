@@ -133,3 +133,42 @@
         margin-top: 1em;
     }
 }
+
+
+/* Clases para opción descarga */
+
+#panelDescarga{
+    position: relative;
+    width: 50px;
+    top: -7px;
+    
+    img, a {
+        position: absolute;
+    }
+
+    a {
+        z-index: 2;
+        opacity: 0;
+    }
+
+}
+
+
+/* Clases para el modal hover - desktop*/
+
+.cardOptions{
+    /* width: 100%;
+    height: auto; */
+    background-color: $purple;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 2;
+} 
+
+.cardOptionsHidden{
+    opacity: 0;
+}
+
+.cardContainer{
+    position: relative;
+}

@@ -12,7 +12,6 @@ export function crearGiF(idGif, urlGif, name, title, idContainer, className){
     card.id = idGif;
     card.alt = title;
     card.setAttribute("class", className);
-
     contenedor.append(card);
 
     card.addEventListener("click", () => {
@@ -24,34 +23,10 @@ export function crearGiF(idGif, urlGif, name, title, idContainer, className){
         let titulo = document.createElement("span");
         titulo.innerText = title;
         imgUser.append(titulo);
-        isFavorite(card.id)
 
-        downloadImagen(urlGif).then(blob => {
-            const url2 = URL.createObjectURL(blob);
-            console.log ("Valor d URL 2 " + url2);
-            //let a = document.createElement('a');
-            let a = document.getElementById("descarga");
-            a.href = url2;
-            a.download = name + '.gif';
-            a.title = 'Descargar';
-            a.textContent = 'Descargar';
-            //document.body.appendChild(a); 
-        }).catch(console.error); 
+        isFavorite(card.id)
     });
 }
-
-/* Funcionalidad para descarga de gif */
-
-async function downloadImagen(url) {
-    console.info("Valor de URL" + url);
-    let response = await fetch(url);
-    let gifBlob = await response.blob();
-    console.log ("Entra a la transformación en blob");
-    console.log("Response: " + response);
-    console.info("Blob: " + gifBlob);
-    return gifBlob;
-}
-
 
 /* Eventos para manejar favoritos */
 
@@ -123,30 +98,3 @@ function deleteFavorite(cardId){
 
     localStorage.setItem('favoritos', JSON.stringify(arregloFavoritos));
 }
-
-
-/* AGREGAR FUNCIONALIDAD DE LOS OTROS CONTROLES DE MODAL */
-
-let botonIzq = document.getElementById("btnLeft");
-let botonDer = document.getElementById("btnRight");
-let spanLeft = document.getElementById("left"); 
-let spanRight = document.getElementById("right");
-
-    if(screen.width > 375){
-        spanLeft.addEventListener( "mouseover" , () => {
-            spanLeft.style.backgroundColor = "#572EE5";
-            botonIzq.src = "./images/buttons/button-left-hover.svg";
-        });
-        spanLeft.addEventListener( "mouseout" , () => {
-            spanLeft.style.backgroundColor = "#FFF";
-            botonIzq.src = "./images/buttons/button-left.svg";
-        }); 
-        spanRight.addEventListener( "mouseover" , () => {
-            spanRight.style.backgroundColor = "#572EE5";
-            botonDer.src = "./images/buttons/button-right-hover.svg";
-        });
-        spanRight.addEventListener( "mouseout" , () => {
-            spanRight.style.backgroundColor = "#FFF";
-            botonDer.src = "./images/buttons/button-right.svg";
-        });
-    }

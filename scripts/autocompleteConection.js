@@ -10,6 +10,7 @@ let txtBusqueda = document.getElementById("barraBuscadora");
 
 txtBusqueda.addEventListener("keydown", () => {
     conectarAutocompetar();
+    txtBusqueda.focus();
 });
 
 async function conectarAutocompetar(){
@@ -78,8 +79,10 @@ function actualizarTags(valores) {
 function actualizarTexto(texto, accion) {
     if (accion === "borrar") {
         txtBusqueda.value="";
+        txtBusqueda.focus();
     }else {
         txtBusqueda.value = texto;
+        txtBusqueda.focus();
     }
     
     limpiarLista();

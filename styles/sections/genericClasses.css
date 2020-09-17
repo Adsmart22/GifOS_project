@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Variables for mobile*/
 .purpleBar {
   background-color: #572EE5;
@@ -135,5 +136,39 @@
   font-family: "Montserrat";
   font-weight: bold;
   margin-top: 1em;
+}
+
+/* Clases para opción descarga */
+#panelDescarga {
+  position: relative;
+  width: 50px;
+  top: -7px;
+}
+
+#panelDescarga img, #panelDescarga a {
+  position: absolute;
+}
+
+#panelDescarga a {
+  z-index: 2;
+  opacity: 0;
+}
+
+/* Clases para el modal hover - desktop*/
+.cardOptions {
+  /* width: 100%;
+    height: auto; */
+  background-color: #572EE5;
+  opacity: 0.7;
+  position: absolute;
+  z-index: 2;
+}
+
+.cardOptionsHidden {
+  opacity: 0;
+}
+
+.cardContainer {
+  position: relative;
 }
 /*# sourceMappingURL=genericClasses.css.map */
