@@ -80,7 +80,8 @@ nav {
             position: relative;
             top: 0;
             text-align: center;
-            margin-right: 100px;
+            //margin-right: 100px;
+            right: 100px;
 
             ul > li {
                 display: inline-block;
@@ -113,8 +114,6 @@ nav {
                     }
                 }
 
-                
-
                 .masOpciones {
                     display: block;
                     margin: auto;
@@ -131,8 +130,6 @@ nav {
                     width: 19px;
                     height: 19px;
                 }
-
-                
             }
 
         }

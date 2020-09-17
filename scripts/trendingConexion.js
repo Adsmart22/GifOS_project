@@ -9,7 +9,7 @@ import {crearGiF} from './modalFuncionalidad.js';
 let botonIzquierdo = document.getElementById("controlLeft");
 let botonDerecho = document.getElementById("controlRight");
 let imgFlechaIzq = document.getElementById("tredingLeft"); 
-let imgFlechaDer = document.getElementById("controlRight");
+let imgFlechaDer = document.getElementById("tredingRight");
 
     if(screen.width > 375){
         botonIzquierdo.addEventListener( "mouseover" , () => {

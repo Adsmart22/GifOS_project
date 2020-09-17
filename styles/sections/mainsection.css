@@ -135,6 +135,47 @@ body > main .resultOfSearch #resultContainer {
 
 @media all and (min-width: 376px) {
   .main #mainTitle {
+    font-size: 28px;
+    width: 380px;
+  }
+  .main #searchImg {
+    width: 300px;
+    height: 150px;
+  }
+  .main .searchControl {
+    width: 400px;
+  }
+  .main .searchControl input {
+    width: 280px;
+    height: 22px;
+    margin-left: 10px;
+  }
+  .main p {
+    width: 400px;
+    height: 75px;
+  }
+  .main p ul {
+    width: 400px;
+    margin: auto;
+  }
+  .main p ul li {
+    cursor: pointer;
+  }
+  .main .resultOfSearch > #resultContainer {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: 7px;
+            column-gap: 7px;
+    row-gap: 7px;
+  }
+  .main .resultOfSearch > #resultContainer .gifResult {
+    width: 100%;
+    height: 170px;
+  }
+}
+
+@media all and (min-width: 700px) {
+  .main #mainTitle {
     font-size: 35px;
     width: 500px;
   }
@@ -160,6 +201,17 @@ body > main .resultOfSearch #resultContainer {
   }
   .main p ul li {
     cursor: pointer;
+  }
+  .main .resultOfSearch > #resultContainer {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
+    row-gap: 10px;
+  }
+  .main .resultOfSearch > #resultContainer .gifResult {
+    width: 100%;
+    height: 200px;
   }
 }
 /*# sourceMappingURL=mainsection.css.map */

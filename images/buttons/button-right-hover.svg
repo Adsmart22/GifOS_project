@@ -12,7 +12,7 @@
                 <g id="button-right-hover" transform="translate(16.000000, 13.000000)">
                     <mask id="mask-2" fill="white">
                         <use xlink:href="#path-1"></use>
-                    </mask> 
+                    </mask>
                     <use fill="#FFF" fill-rule="nonzero" xlink:href="#path-1"></use>
                 </g>
             </g>

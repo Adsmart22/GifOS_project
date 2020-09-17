@@ -128,7 +128,7 @@ nav ul li a {
     position: relative;
     top: 0;
     text-align: center;
-    margin-right: 100px;
+    right: 100px;
   }
   header > .menuSection nav ul > li {
     display: inline-block;
@@ -317,6 +317,40 @@ nav ul li a {
   font-family: "Montserrat";
   font-weight: bold;
   margin-top: 1em;
+}
+
+/* Clases para opción descarga */
+#panelDescarga {
+  position: relative;
+  width: 50px;
+  top: -7px;
+}
+
+#panelDescarga img, #panelDescarga a {
+  position: absolute;
+}
+
+#panelDescarga a {
+  z-index: 2;
+  opacity: 0;
+}
+
+/* Clases para el modal hover - desktop*/
+.cardOptions {
+  /* width: 100%;
+    height: auto; */
+  background-color: #572EE5;
+  opacity: 0.7;
+  position: absolute;
+  z-index: 2;
+}
+
+.cardOptionsHidden {
+  opacity: 0;
+}
+
+.cardContainer {
+  position: relative;
 }
 
 /* Variables for mobile*/
@@ -554,6 +588,47 @@ body > main .resultOfSearch #resultContainer {
 
 @media all and (min-width: 376px) {
   .main #mainTitle {
+    font-size: 28px;
+    width: 380px;
+  }
+  .main #searchImg {
+    width: 300px;
+    height: 150px;
+  }
+  .main .searchControl {
+    width: 400px;
+  }
+  .main .searchControl input {
+    width: 280px;
+    height: 22px;
+    margin-left: 10px;
+  }
+  .main p {
+    width: 400px;
+    height: 75px;
+  }
+  .main p ul {
+    width: 400px;
+    margin: auto;
+  }
+  .main p ul li {
+    cursor: pointer;
+  }
+  .main .resultOfSearch > #resultContainer {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: 7px;
+            column-gap: 7px;
+    row-gap: 7px;
+  }
+  .main .resultOfSearch > #resultContainer .gifResult {
+    width: 100%;
+    height: 170px;
+  }
+}
+
+@media all and (min-width: 700px) {
+  .main #mainTitle {
     font-size: 35px;
     width: 500px;
   }
@@ -579,6 +654,17 @@ body > main .resultOfSearch #resultContainer {
   }
   .main p ul li {
     cursor: pointer;
+  }
+  .main .resultOfSearch > #resultContainer {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
+    row-gap: 10px;
+  }
+  .main .resultOfSearch > #resultContainer .gifResult {
+    width: 100%;
+    height: 200px;
   }
 }
 
@@ -714,6 +800,30 @@ body > main .resultOfSearch #resultContainer {
 .favorites #favoriteItems img {
   width: 158px;
   height: 120px;
+}
+
+@media all and (min-width: 376px) {
+  .favorites > #favoriteItems {
+    width: 80%;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  .favorites > #favoriteItems img {
+    width: 100%;
+    height: 100px;
+  }
+}
+
+@media all and (min-width: 700px) {
+  .favorites #favoriteItems {
+    width: 80%;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+  .favorites #favoriteItems img {
+    width: 100%;
+    height: 200px;
+  }
 }
 
 /* Variables for mobile*/
