@@ -1,5 +1,7 @@
 @charset "UTF-8";
+/*dark mode */
 /* Variables for mobile*/
+/*dark mode */
 /* Variables for mobile*/
 .header {
   width: 100%;
@@ -49,6 +51,7 @@
   display: none;
 }
 
+/*dark mode */
 /* Variables for mobile*/
 .menuSection input[type="checkbox"], .menuSection .menuIcon, .menuSection .closeMenu {
   position: absolute;
@@ -180,6 +183,7 @@ nav ul li a {
   }
 }
 
+/*dark mode */
 /* Variables for mobile*/
 .purpleBar {
   background-color: #572EE5;
@@ -353,6 +357,7 @@ nav ul li a {
   position: relative;
 }
 
+/*dark mode */
 /* Variables for mobile*/
 .footer {
   color: #000000;
@@ -451,6 +456,7 @@ nav ul li a {
   }
 }
 
+/*dark mode */
 /* Variables for mobile*/
 body > main {
   display: -webkit-box;
@@ -668,6 +674,7 @@ body > main .resultOfSearch #resultContainer {
   }
 }
 
+/*dark mode */
 /* Variables for mobile*/
 .trendingSection p {
   padding-top: 10px;
@@ -772,6 +779,7 @@ body > main .resultOfSearch #resultContainer {
   }
 }
 
+/*dark mode */
 /* Variables for mobile*/
 .favorites {
   text-align: center;
@@ -826,6 +834,7 @@ body > main .resultOfSearch #resultContainer {
   }
 }
 
+/*dark mode */
 /* Variables for mobile*/
 .myGifos {
   text-align: center;
@@ -859,7 +868,9 @@ body > main .resultOfSearch #resultContainer {
   height: 120px;
 }
 
+/*dark mode */
 /* Variables for mobile*/
+/*dark mode */
 /* Variables for mobile*/
 .createGif {
   display: none;
@@ -973,6 +984,7 @@ body > main .resultOfSearch #resultContainer {
   }
 }
 
+/*dark mode */
 /* Variables for mobile*/
 .mainModal {
   display: none;
@@ -1107,6 +1119,96 @@ body > main .resultOfSearch #resultContainer {
   .mainModal > .modalContenido > .imgModal > span {
     display: block;
   }
+}
+
+/*dark mode */
+/* Variables for mobile*/
+/*ESTILOS MENU*/
+.darkModeHeader {
+  background-color: #37383C;
+}
+
+.darkModeHeader .purpleBar {
+  background-color: #000000;
+}
+
+.darkMenu {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.darkMain {
+  background-color: #37383C;
+}
+
+.darkMain #mainTitle, .darkMain .secundaryTitle, .darkMain p {
+  color: #FFFFFF;
+}
+
+.darkMain .searchControl {
+  background-color: #37383C;
+  border: #FFFFFF 1px solid;
+}
+
+.darkMain .searchControl input {
+  background-color: #37383C;
+  color: #FFFFFF;
+}
+
+.darkMain .searchControl ul {
+  color: #FFFFFF;
+}
+
+.darkMain .btnShowMore {
+  border: solid 1px #FFFFFF;
+  background-color: #37383C;
+  color: #FFFFFF;
+}
+
+.darkOwn {
+  background-color: #37383C;
+  width: 100%;
+}
+
+.darkOwn div {
+  background-color: #37383C;
+  color: #FFFFFF;
+}
+
+.darkOwn div .secundaryTitle, .darkOwn div p {
+  color: #FFFFFF;
+}
+
+.darkOwn .purpleBar {
+  background-color: #000000;
+}
+
+.darkOwn .btnShowMore {
+  border: solid 1px #FFFFFF;
+  background-color: #37383C;
+  color: #FFFFFF;
+}
+
+.darkTrending {
+  background-color: #222326;
+  color: #FFFFFF;
+}
+
+.darkTrending .secundaryTitle, .darkTrending p {
+  color: #FFFFFF;
+}
+
+.darkFooter {
+  background-color: #37383C;
+}
+
+.darkFooter aside > div > h3, .darkFooter .secundaryTitle, .darkFooter p {
+  background-color: #37383C;
+  color: #FFFFFF;
+}
+
+.darkFooter .purpleBar {
+  background-color: #000000;
 }
 
 * {

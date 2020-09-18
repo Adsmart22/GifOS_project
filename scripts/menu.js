@@ -1,6 +1,5 @@
 /* recuperar opciones de menus */
 let masOpcionesDiv = document.getElementById("moreOpt");  // Funciona OK
-let modoOscuro = document.getElementById("modoOscuroOpt");
 let favoritosM = document.getElementById("favoritosOpt");
 let misGif = document.getElementById("misGifOpt");
 
