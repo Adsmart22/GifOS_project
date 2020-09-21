@@ -128,10 +128,10 @@ body > main .resultOfSearch #resultContainer {
   -webkit-column-gap: 5px;
           column-gap: 5px;
   row-gap: 5px;
-  /* .gifResult{
-                width: $resultWidth;
-                height: $resultHeight;
-            } */
+}
+
+body > main #masBusqueda {
+  display: none;
 }
 
 @media all and (min-width: 376px) {

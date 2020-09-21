@@ -12,6 +12,7 @@
 .darkMenu {
   background-color: #000000;
   color: #FFFFFF;
+  opacity: 0.9;
 }
 
 .darkMain {
@@ -86,5 +87,13 @@
 
 .darkFooter .purpleBar {
   background-color: #000000;
+}
+
+.darkModeModal {
+  background-color: #37383C;
+}
+
+.darkModeModal #imgUser, .darkModeModal span {
+  color: #FFFFFF;
 }
 /*# sourceMappingURL=darkMode.css.map */
