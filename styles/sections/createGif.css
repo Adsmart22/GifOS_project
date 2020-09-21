@@ -5,6 +5,7 @@
   width: 90%;
   margin: auto;
   border: solid 1px red;
+  text-align: center;
 }
 
 .createGif .containerVideo {

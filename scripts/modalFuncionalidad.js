@@ -29,13 +29,11 @@ export function crearGiF(idGif, urlGif, name, title, idContainer, className){
         downloadImagen(urlGif).then(blob => {
             const url2 = URL.createObjectURL(blob);
             console.log ("Valor d URL 2 " + url2);
-            //let a = document.createElement('a');
             let a = document.getElementById("descarga");
             a.href = url2;
             a.download = name + '.gif';
             a.title = 'Descargar';
             a.textContent = 'Descargar';
-            //document.body.appendChild(a); 
         }).catch(console.error); 
     });
 }
@@ -68,7 +66,6 @@ btnFavoritos.addEventListener("click", () => {
     }
     else {
         // Si es la primera vez, la agrega como favoritos
-        //let imagenSelecionada = document.getElementsByClassName("centralImg");
         btnFavoritos.src = "./images/icons/icon-favoritos.svg";
         console.warn("a penas se va a seleccionar");
 
@@ -96,12 +93,10 @@ function isFavorite(cardId) {
 
         for (let i=0; i < arregloLocal.length; i+=1){
             if(cardId === arregloLocal[i]) {
-                //console.log("Encontré elemento en local: " + cardId);
                 btnFavoritos.src = "./images/icons/icon-favoritos.svg";
                 break;
             }
             else {
-                //console.log("No encontró: " + cardId);
                 btnFavoritos.src = "./images/icons/icon-fav-active.svg";
             }
         }
@@ -134,19 +129,43 @@ let spanRight = document.getElementById("right");
 
     if(screen.width > 375){
         spanLeft.addEventListener( "mouseover" , () => {
-            spanLeft.style.backgroundColor = "#572EE5";
-            botonIzq.src = "./images/buttons/button-left-hover.svg";
+            if (modal.classList.contains("darkModeModal")) {
+                spanLeft.style.backgroundColor = "#FFF";
+                botonIzq.src = "./images/buttons/left_dark.svg";
+            }
+            else {
+                spanLeft.style.backgroundColor = "#572EE5";
+                botonIzq.src = "./images/buttons/button-left-hover.svg";
+            }
         });
         spanLeft.addEventListener( "mouseout" , () => {
-            spanLeft.style.backgroundColor = "#FFF";
-            botonIzq.src = "./images/buttons/button-left.svg";
+            if (modal.classList.contains("darkModeModal")) {
+                spanLeft.style.backgroundColor = "#37383C";
+                botonIzq.src = "./images/buttons/button-left-hover.svg";
+            }
+            else {
+                spanLeft.style.backgroundColor = "#FFF";
+                botonIzq.src = "./images/buttons/button-left.svg";
+            }
         }); 
         spanRight.addEventListener( "mouseover" , () => {
-            spanRight.style.backgroundColor = "#572EE5";
-            botonDer.src = "./images/buttons/button-right-hover.svg";
+            if (modal.classList.contains("darkModeModal")) {
+                spanRight.style.backgroundColor = "#FFF";
+                botonDer.src = "./images/buttons/right_dark.svg";
+            }
+            else {
+                spanRight.style.backgroundColor = "#572EE5";
+                botonDer.src = "./images/buttons/button-right-hover.svg";
+            }
         });
         spanRight.addEventListener( "mouseout" , () => {
-            spanRight.style.backgroundColor = "#FFF";
-            botonDer.src = "./images/buttons/button-right.svg";
+            if (modal.classList.contains("darkModeModal")) {
+                spanRight.style.backgroundColor = "#37383C";
+                botonDer.src = "./images/buttons/button-right-hover.svg";
+            }
+            else {
+                spanRight.style.backgroundColor = "#FFF";
+                botonDer.src = "./images/buttons/button-right.svg";
+            }
         });
     }

@@ -103,12 +103,10 @@ body > main {
             grid-template-columns: repeat(2, 1fr) ;
             column-gap: 5px;
             row-gap: 5px;
-
-            /* .gifResult{
-                width: $resultWidth;
-                height: $resultHeight;
-            } */
         }
+    }
+    #masBusqueda {
+        display: none;
     }
 }
 

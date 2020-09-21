@@ -9,6 +9,7 @@ let btnEjecutarBusqueda = document.getElementById("btnPanelBusqueda");
 let inputBusqueda = document.getElementById("barraBuscadora");
 let valorInput;
 let limitSearch = 12;
+let btnBusqueda = document.getElementById("masBusqueda");
 
 
 btnEjecutarBusqueda.addEventListener("click", () => {
@@ -34,6 +35,7 @@ async function obtenerResultado(itemBusqueda) {
     try {
         if (status === 200 && searchResult.data.length > 0) {
             crearResultadoBusqueda(searchResult.data, itemBusqueda);
+            btnBusqueda.style.display = "block";
         }else if (searchResult.data.length === 0) {
             mostrarNoResultados();
         } else if (status === 404){

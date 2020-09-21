@@ -13,6 +13,7 @@
 .darkMenu {
     background-color: $black;
     color: $white;
+    opacity: 0.9;
 }
 
 .darkMain {
@@ -84,5 +85,13 @@
 
     .purpleBar {
         background-color: $black;
+    }
+}
+
+.darkModeModal {
+    background-color: $darkGray;
+
+    #imgUser, span {
+        color: $white;
     }
 }
