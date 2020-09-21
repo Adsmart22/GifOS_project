@@ -18,7 +18,7 @@
       flex-wrap: wrap column;
 }
 
-.createGif .containerVideo #ownGifContainer {
+.createGif .containerVideo #ownGifContainer, .createGif .containerVideo #containerVideo {
   width: 688px;
   height: 380px;
   -webkit-box-align: center;
@@ -27,7 +27,7 @@
   border: solid 1px #572EE5;
 }
 
-.createGif .containerVideo #ownGifContainer h2 {
+.createGif .containerVideo #ownGifContainer h2, .createGif .containerVideo #containerVideo h2 {
   margin-top: 5em;
 }
 
@@ -47,6 +47,12 @@
 .createGif .containerVideo #objetosCamara > #camara {
   width: 91px;
   height: 151px;
+}
+
+.createGif .containerVideo #containerVideo > #videoGif {
+  width: 480px;
+  height: 320px;
+  margin: auto;
 }
 
 .createGif .panelRecord {

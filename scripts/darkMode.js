@@ -12,6 +12,7 @@ modoOscuro.addEventListener("click", () => {
     let trend = document.getElementById("trend");
     let footer = document.getElementsByTagName("footer");
     let modal = document.getElementById("modal");
+    
 
     header[0].classList.toggle("darkModeHeader");
     main.classList.toggle("darkMain");
@@ -54,6 +55,8 @@ function actualizarRecursos(accion){
     let btnRight = document.getElementById("btnRight");
     let camara = document.getElementById("camara");
     let movie = document.getElementById("movie");
+    let close = document.getElementById("closeMenu");
+    let burger = document.getElementById("menuIcon");
     
     switch (accion) {
         case "cambiar":
@@ -76,6 +79,8 @@ function actualizarRecursos(accion){
             btnRight.src = "./images/buttons/button-right-hover.svg";
             camara.src = "images/others/camara-modo-noc.svg";
             movie.src = "images/others/pelicula-modo-noc.svg";
+            close.src = "./images/icons/close-modNoc.svg";
+            burger.src = "./images/icons/burger-noc.svg";
             break;
         case "original":
             logo.src = "./images/logos/logo-desktop.svg";
@@ -97,6 +102,8 @@ function actualizarRecursos(accion){
             btnRight.src = "./images/buttons/button-right.svg";
             camara.src = "images/others/camara.svg";
             movie.src = "images/others/pelicula.svg";
+            close.src = "./images/icons/close.svg";
+            burger.src = "./images/icons/burger.svg";
             break;
         default:
             break;

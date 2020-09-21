@@ -14,7 +14,7 @@
         display: flex;
         flex-wrap: wrap column;
 
-        #ownGifContainer {
+        #ownGifContainer, #containerVideo {
             width: 688px;
             height: 380px;
             align-items: center;
@@ -42,6 +42,12 @@
         #objetosCamara > #camara {
             width: 91px;
             height: 151px;
+        }
+
+        #containerVideo > #videoGif {
+            width: 480px;
+            height: 320px;
+            margin: auto;
         }
     }
 

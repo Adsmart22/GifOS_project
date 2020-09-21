@@ -110,21 +110,26 @@
           <img src="images/others/camara.svg" alt="camara" id ="camara"/>
           <img src="images/others/element-luz-camara.svg" alt="lights" id="complemento" />
           <div id="ownGifContainer" class="bodyText">
-            <h2 class="secundaryTitle">Aquí podrás crear tus propios <span>GIFOS</span></h2>
-            <p>¡Crea tus GIF en tan sólo 3 pasos!</p>
-            <p>(solo necesitas una cámara para grabar un video)</p>
+            <h2 class="secundaryTitle" id="info1">Aquí podrás crear tus propios <span>GIFOS</span></h2>
+            <p id="info2">¡Crea tus GIF en tan sólo 3 pasos!</p>
+            <p id="info3">(solo necesitas una cámara para grabar un video)</p>
+          </div>
+          <div id="videoContainer">
+            <video id="videoGif"></video>
           </div>
         </div>
         <div class="panelRecord">
           <div id="stepsGif"> 
-            <button class="btnSteps">1</button>
-            <button class="btnSteps">2</button>
-            <button class="btnSteps">3</button>
+            <button class="btnSteps" id="step1">1</button>
+            <button class="btnSteps" id="step2">2</button>
+            <button class="btnSteps" id="step3">3</button>
           </div>
           <img src="images/others/pelicula.svg" alt="movie" id="movie"/> 
           <div class="purpleBar shortBar"></div>
         </div>
-        <button class="btnShowMore gridButton">COMENZAR</button>       
+        <button class="btnShowMore gridButton" id="comenzarGrab">COMENZAR</button>  
+        <button class="btnShowMore gridButton" id="grabar">GRABAR</button> 
+        <button class="btnShowMore gridButton" id="finalizar">FINALIZAR</button>    
       </div>
 
       <!-- GIF trending -->
@@ -199,6 +204,7 @@
     <script src="./scripts/searchConection.js" type="module"></script>
     <script src="./scripts/favoritos.js" type="module"> </script>
     <script src="./scripts/modalFuncionalidad.js" type="module"></script>
+    <script src="./scripts/misGifos.js" type="module"></script>
     <script src="./scripts/darkMode.js"></script>
   </body>
 </html>

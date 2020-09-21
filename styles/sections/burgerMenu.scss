@@ -60,11 +60,13 @@ nav {
                 display: block;
                 text-decoration: none;
             }
+            
+            /* .masOpciones {
+                display: none;
+            } */
         } 
     }
 } 
-
-//SE GENERARÁN 2 CLSES DENTRO DEL mq Y SE APLICARÁ UNA U OTRA CON JS
 
 @media all and (min-width: 376px) {
     header > .menuSection {
@@ -82,7 +84,6 @@ nav {
             top: 0;
             text-align: center;
             background-color: $white;
-            //margin-right: 100px;
             right: 100px;
 
             ul > li {
@@ -200,77 +201,3 @@ nav {
         }
     }
 } 
-
-//FUNCIONA DE FORMA CORRECTA
-
-/* @media all and (min-width: 376px) {
-    header > .menuSection {
-        width: 100%;
-        #menuIcon, #closeMenu {
-            display: none;
-        }
-
-        nav {
-            width: auto;
-            height: 90px;
-            position: relative;
-            display: block;
-            position: relative;
-            top: 0;
-            text-align: center;
-            //background-color: $white;
-            //margin-right: 100px;
-            right: 100px;
-
-            ul > li {
-                display: inline-block;
-                padding-left: 20px;
-                font-family: $fuenteBody;
-
-                hr{
-                    display:none;
-                } 
-
-                a{
-                    color: $purple;
-                    font-family: $fuenteBody;
-                    font-size: $menuDesktop;
-                    display: inline-block;
-                    text-decoration: none;
-                    padding-left: 20px;
-                    margin-top: 36px;
-                    font-weight: bold;
-
-                    &:hover{
-                        text-decoration: underline;
-                        text-decoration-color: $lightAqua;
-                        text-decoration-line: solid ;
-                        line-height: 2px; 
-                    }
-
-                    &:active{
-                        color: $grayMedium;
-                    }
-                }
-
-                .masOpciones {
-                    display: block;
-                    margin: auto;
-                    border-radius: 50px;
-                    //width: 20%;
-                    border: 1px $purple solid;
-                    height: 56px;
-                    width: 56px;
-                    display: grid;
-                    justify-content: center;
-                    align-content: center;
-                }
-                .moreImg {
-                    width: 19px;
-                    height: 19px;
-                }
-            }
-
-        }
-    }
-} */
