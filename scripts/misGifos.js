@@ -4,7 +4,9 @@ import { constraints } from './variables.js';
 
 /* Recuperar elementos y añadir eventos */
 
-let comenzarGrab = document.getElementById("comenzarGrab");
+let comenzar = document.getElementById("comenzarGrab");
+let grabar = document.getElementById("grabar");
+let finalizar = document.getElementById("finalizar");
 let info1 = document.getElementById("info1");
 let info2 = document.getElementById("info2");
 let info3 = document.getElementById("info3");
@@ -16,7 +18,9 @@ let videoContainer = document.getElementById("videoContainer");
 let video = document.getElementById("videoGif");
 let instrucciones = document.getElementById("ownGifContainer");
 
-comenzarGrab.addEventListener("click", ()=>{
+/* EVENTOS PARA MANIPULAR TEXTOS Y CAMARAS CUANDO SE SELECCIONA LA OPCIÓN GRABAR */
+
+comenzar.addEventListener("click", ()=>{
     if (crear.classList.contains("darkOwn")) {
         step1.style.backgroundColor = "#FFF";
         step1.style.color = "#37383C";
@@ -33,7 +37,7 @@ comenzarGrab.addEventListener("click", ()=>{
     obtenerPermisos();
 });
 
-comenzarGrab.addEventListener("mouseover", ()=>{
+comenzar.addEventListener("mouseover", ()=>{
     if (crear.classList.contains("darkOwn")) {
         comenzarGrab.style.backgroundColor = "#FFF";
         comenzarGrab.style.color = "#37383C";
@@ -44,7 +48,7 @@ comenzarGrab.addEventListener("mouseover", ()=>{
     }
 });
 
-comenzarGrab.addEventListener("mouseout" , ()=>{
+comenzar.addEventListener("mouseout" , ()=>{
     if (crear.classList.contains("darkOwn")) {
         comenzarGrab.style.backgroundColor = "#37383C";
         comenzarGrab.style.color = "#FFF";
@@ -55,10 +59,50 @@ comenzarGrab.addEventListener("mouseout" , ()=>{
     }
 });
 
+grabar.addEventListener("click", ()=> {
+    grabarGif();
 
-/* FUNCIONES PARA GRABACIÓN */
+    if (crear.classList.contains("darkOwn")) {
+        step1.style.backgroundColor = "#37383C";
+        step1.style.color = "#FFF";
+        step2.style.backgroundColor = "#FFF";
+        step2.style.color = "#37383C";
+    }
+    else {
+        step1.style.backgroundColor = "#FFF";
+        step1.style.color = "#572EE5";
+        step2.style.backgroundColor = "#572EE5";
+        step2.style.color = "#FFF ";
+    }
 
-function obtenerPermisos() {
+    grabar.style.display = "none";
+    finalizar.style.display = "block";
+});
+
+finalizar.addEventListener("click", () => {
+    detenerGif();
+
+    if (crear.classList.contains("darkOwn")) {
+        step2.style.backgroundColor = "#FFF";
+        step2.style.color = "#37383C";
+    }
+    else {
+        step2.style.backgroundColor = "#572EE5";
+        step2.style.color = "#FFF ";
+    }
+})
+
+
+/* FUNCIONES PARA INICIAR CAM - GRABAR - TERMINAR */
+let stream = null;
+let videoBlob = null;
+let recorder;
+
+async function obtenerPermisos() {
+    comenzar.style.display = "none";
+    grabar.style.display = "block";
+
+
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function (mediaStream) {
             instrucciones.style.display = "none";
@@ -69,5 +113,41 @@ function obtenerPermisos() {
                 video.play();
             };
         })
-        .catch(function (err) { console.log(err.name + ": " + err.message); });
+        .catch(function (err) { 
+            console.log(err.name + ": " + err.message); 
+        });
+}
+
+function grabarGif(){
+    navigator.mediaDevices.getUserMedia(constraints)
+        .then(async function (stream) {
+            recorder = new RecordRTC(stream, {
+                type: 'gif',
+                mimeType: 'video/webm',
+                recorderType: GifRecorder,
+                disableLogs: true,
+                quality: 6,
+                width: 400,
+                height: 320
+            });
+            recorder.startRecording();
+            recorder.stream = stream;
+        })
+}
+
+function detenerGif(){
+    recorder.stopRecording( detenerCallBack);
+}
+
+function detenerCallBack(){
+    videoBlob = recorder.getBlob();
+
+    video.src = video.srcObject = null;
+    video.src = URL.createObjectURL(videoBlob);
+
+    recorder.stream.stop();
+    recorder.destroy();
+    recorder = null;
+
+    invokeSaveAsDialog(videoBlob);
 }

@@ -419,7 +419,7 @@ nav ul li a {
 }
 
 /* Estilos para la grabacion */
-#grabar, #finalizar, #videoContainer {
+#grabar, #finalizar, #videoContainer, #subir {
   display: none;
 }
 
