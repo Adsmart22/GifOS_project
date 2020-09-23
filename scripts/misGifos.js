@@ -14,7 +14,7 @@ let step1 = document.getElementById("step1");
 let step2 = document.getElementById("step2");
 let step3 = document.getElementById("step3");
 let crear = document.getElementById("ownGif"); 
-let videoContainer = document.getElementById("videoContainer");
+//let videoContainer = document.getElementById("videoContainer");
 let video = document.getElementById("videoGif");
 let instrucciones = document.getElementById("ownGifContainer");
 
@@ -61,6 +61,7 @@ comenzar.addEventListener("mouseout" , ()=>{
 
 grabar.addEventListener("click", ()=> {
     grabarGif();
+    contador();
 
     if (crear.classList.contains("darkOwn")) {
         step1.style.backgroundColor = "#37383C";
@@ -81,6 +82,7 @@ grabar.addEventListener("click", ()=> {
 
 finalizar.addEventListener("click", () => {
     detenerGif();
+    detenerCronometro();
 
     if (crear.classList.contains("darkOwn")) {
         step2.style.backgroundColor = "#FFF";
@@ -102,11 +104,12 @@ async function obtenerPermisos() {
     comenzar.style.display = "none";
     grabar.style.display = "block";
 
-
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function (mediaStream) {
-            instrucciones.style.display = "none";
-            videoContainer.style.display = "block";
+            info1.style.display = "none";
+            info2.style.display = "none";
+            info3.style.display = "none";
+            video.style.display = "block";
 
             video.srcObject = mediaStream;
             video.onloadedmetadata = function (e) {
@@ -150,4 +153,27 @@ function detenerCallBack(){
     recorder = null;
 
     invokeSaveAsDialog(videoBlob);
+}
+
+let cronometro;
+
+function contador(){
+    let segundos = 0;
+    let minutos = 0;
+    let contador = document.getElementById("contador");
+
+    cronometro = setInterval(
+        function(){        
+            if( segundos == 60) {
+                segundos = 0;
+                minutos += 1;
+            }
+
+            contador.innerHTML = "00:0" + minutos + ":" + segundos;
+            segundos += 1;
+        }, 1000);
+}
+
+function detenerCronometro() {
+    clearInterval(cronometro);
 }

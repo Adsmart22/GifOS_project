@@ -4,7 +4,6 @@
   display: none;
   width: 90%;
   margin: auto;
-  border: solid 1px red;
   text-align: center;
 }
 
@@ -18,16 +17,28 @@
       flex-wrap: wrap column;
 }
 
-.createGif .containerVideo #ownGifContainer, .createGif .containerVideo #containerVideo {
+.createGif .containerVideo #ownGifContainer, .createGif .containerVideo #videoContainer {
   width: 688px;
   height: 380px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   border: solid 1px #572EE5;
 }
 
-.createGif .containerVideo #ownGifContainer h2, .createGif .containerVideo #containerVideo h2 {
+.createGif .containerVideo #ownGifContainer #internalCont, .createGif .containerVideo #videoContainer #internalCont {
+  width: 600px;
+  height: 360px;
+  border: solid 1px #50E3C2;
+}
+
+.createGif .containerVideo #ownGifContainer h2, .createGif .containerVideo #videoContainer h2 {
   margin-top: 5em;
 }
 
@@ -49,10 +60,26 @@
   height: 151px;
 }
 
-.createGif .containerVideo #containerVideo > #videoGif {
+.createGif .containerVideo #videoGif {
   width: 480px;
   height: 320px;
   margin: auto;
+  margin-top: 1em;
+}
+
+.createGif .containerVideo label {
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 400px;
+  right: 40px;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 15px;
+  color: #572EE5;
+  letter-spacing: 0;
+  line-height: 22px;
 }
 
 .createGif .panelRecord {
