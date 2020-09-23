@@ -7,5 +7,11 @@ export const endpointGifById = "http://api.giphy.com/v1/gifs/";
 export const tituloGenerico = "GIF animado";
 export const nombreGenerico = "GIF";
 export let arregloFavoritos = [];
-export let constraints = { audio: false, video: true };
+export let constraints = { 
+    audio: false, 
+    video: {
+        width: 400,
+        height: 320,
+    } 
+};
 
