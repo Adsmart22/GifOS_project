@@ -14,4 +14,4 @@ export let constraints = {
         height: 320,
     } 
 };
-
+export const endpointCargar = "http://upload.giphy.com/v1/gifs";

@@ -1,12 +1,13 @@
 /* Importar variables */
 
-import { constraints } from './variables.js';
+import { constraints, endpointCargar, apiKey} from './variables.js';
 
 /* Recuperar elementos y añadir eventos */
 
 let comenzar = document.getElementById("comenzarGrab");
 let grabar = document.getElementById("grabar");
 let finalizar = document.getElementById("finalizar");
+let subir = document.getElementById("subir");
 let info1 = document.getElementById("info1");
 let info2 = document.getElementById("info2");
 let info3 = document.getElementById("info3");
@@ -14,9 +15,10 @@ let step1 = document.getElementById("step1");
 let step2 = document.getElementById("step2");
 let step3 = document.getElementById("step3");
 let crear = document.getElementById("ownGif"); 
-//let videoContainer = document.getElementById("videoContainer");
 let video = document.getElementById("videoGif");
-let instrucciones = document.getElementById("ownGifContainer");
+let idGif = null;
+let status;
+let arregloGifLocal;
 
 /* EVENTOS PARA MANIPULAR TEXTOS Y CAMARAS CUANDO SE SELECCIONA LA OPCIÓN GRABAR */
 
@@ -92,6 +94,26 @@ finalizar.addEventListener("click", () => {
         step2.style.backgroundColor = "#572EE5";
         step2.style.color = "#FFF ";
     }
+
+    finalizar.style.display = 'none';
+    subir.style.display = "block";
+});
+
+subir.addEventListener("click", ()=>{
+    realizarCargaGif(videoBlob);
+
+    if (crear.classList.contains("darkOwn")) {
+        step2.style.backgroundColor = "#37383C";
+        step2.style.color = "#FFF";
+        step3.style.backgroundColor = "#FFF";
+        step3.style.color = "#37383C";
+    }
+    else {
+        step2.style.backgroundColor = "#FFF";
+        step2.style.color = "#572EE5";
+        step3.style.backgroundColor = "#572EE5";
+        step3.style.color = "#FFF ";
+    }
 })
 
 
@@ -145,15 +167,53 @@ function detenerGif(){
 function detenerCallBack(){
     videoBlob = recorder.getBlob();
 
-    video.src = video.srcObject = null;
+    /* video.src = video.srcObject = null;
     video.src = URL.createObjectURL(videoBlob);
 
     recorder.stream.stop();
     recorder.destroy();
     recorder = null;
 
-    invokeSaveAsDialog(videoBlob);
+    invokeSaveAsDialog(videoBlob); */
+
+    recorder.stream.stop();
 }
+
+function realizarCargaGif(vBloob){
+    let form = new FormData();
+    form.append('file', vBloob, 'myGif.gif');
+    console.log("info file");
+    console.info(form.get('file'));
+
+    cargarGif(form);
+}
+
+function cargarGif(gifForm) {
+    console.warn("entra a método final");
+    fetch(endpointCargar + '?api_key=' + apiKey , {
+        method: 'POST',
+        body: gifForm
+    }).then(response => response.json())
+    .then( jsonResult => {
+        localStorage.setItem("misGifos", "");
+        console.log("Resultado en json");
+        console.log(jsonResult);
+        console.log(jsonResult.meta.status);
+        console.log(jsonResult.data.id);
+ 
+        recorder.destroy();
+        recorder = null; 
+
+        idGif = jsonResult.data.id;
+        status = jsonResult.meta.status; 
+        
+        console.log("ID gif " + idGif);
+        console.log("status " + status);
+    }).catch(function (error) {
+        console.log("Ocurrió un error al cargar el endpoint");
+        console.error(error);
+    })
+} 
 
 let cronometro;
 
