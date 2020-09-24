@@ -172,7 +172,7 @@
 }
 
 /* Estilos para la grabacion */
-#grabar, #finalizar, #videoContainer, #subir {
+#grabar, #finalizar, #videoContainer, #subir, #verMasGif {
   display: none;
 }
 /*# sourceMappingURL=genericClasses.css.map */

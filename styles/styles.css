@@ -419,7 +419,7 @@ nav ul li a {
 }
 
 /* Estilos para la grabacion */
-#grabar, #finalizar, #videoContainer, #subir {
+#grabar, #finalizar, #videoContainer, #subir, #verMasGif {
   display: none;
 }
 
@@ -895,14 +895,11 @@ body > main #masBusqueda {
 
 .myGifos .gifosItems {
   width: 90%;
-  min-height: 720px;
   margin: auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (156px)[2];
       grid-template-columns: repeat(2, 156px);
-  -ms-grid-rows: (1fr)[6];
-      grid-template-rows: repeat(6, 1fr);
   grid-column-gap: 0.5em;
   grid-row-gap: 0.5em;
   -webkit-box-pack: justify;
