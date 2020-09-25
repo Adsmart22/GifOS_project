@@ -1,6 +1,6 @@
 /* Importar variables */
 
-import { constraints, endpointCargar, apiKey} from './variables.js';
+import { constraints, endpointCargar, apiKey, contador, detenerCronometro} from './variables.js';
 
 /* Recuperar elementos y añadir eventos */
 
@@ -16,18 +16,26 @@ let step2 = document.getElementById("step2");
 let step3 = document.getElementById("step3");
 let crear = document.getElementById("ownGif"); 
 let video = document.getElementById("videoGif");
+let contenedorVideo = document.getElementsByClassName("mainModalVideo");
+let modalVideo = document.getElementById("modalVideo");
+let imgVideoModal = document.getElementById("imgVideoModal");
+let textVideoModal = document.getElementById("textVideoModal");
+
 let idGif = null;
 let status;
-let arregloGifLocal;
+let arregloGifLocal = [];
 
 /* EVENTOS PARA MANIPULAR TEXTOS Y CAMARAS CUANDO SE SELECCIONA LA OPCIÓN GRABAR */
 
 comenzar.addEventListener("click", ()=>{
+    console.log(crear.classList.contains("darkOwn"));
     if (crear.classList.contains("darkOwn")) {
-        step1.style.backgroundColor = "#FFF";
-        step1.style.color = "#37383C";
+        step1.style.border = "solid 1px #FFF"
+        step1.style.backgroundColor = "#37383C";
+        step1.style.color = "#FFF";
     }
     else {
+        step1.style.color = "#FFF ";
         step1.style.backgroundColor = "#572EE5";
         step1.style.color = "#FFF ";
     }
@@ -66,10 +74,12 @@ grabar.addEventListener("click", ()=> {
     contador();
 
     if (crear.classList.contains("darkOwn")) {
-        step1.style.backgroundColor = "#37383C";
-        step1.style.color = "#FFF";
-        step2.style.backgroundColor = "#FFF";
-        step2.style.color = "#37383C";
+        step1.style.border = "solid 1px #37383C";
+        step1.style.backgroundColor = "#FFF";
+        step1.style.color = "#37383C";
+        step2.style.border = "solid 1px #FFF";
+        step2.style.backgroundColor = "#37383C";
+        step2.style.color = "#FFF";
     }
     else {
         step1.style.backgroundColor = "#FFF";
@@ -101,12 +111,15 @@ finalizar.addEventListener("click", () => {
 
 subir.addEventListener("click", ()=>{
     realizarCargaGif(videoBlob);
+    subir.style.display = "none";
 
     if (crear.classList.contains("darkOwn")) {
-        step2.style.backgroundColor = "#37383C";
-        step2.style.color = "#FFF";
-        step3.style.backgroundColor = "#FFF";
-        step3.style.color = "#37383C";
+        step2.style.border = "solid 1px #37383C";
+        step2.style.backgroundColor = "#FFF";
+        step2.style.color = "#37383C";
+        step3.style.border = "solid 1px #FFF";
+        step3.style.backgroundColor = "#37383C";
+        step3.style.color = "#FFF";
     }
     else {
         step2.style.backgroundColor = "#FFF";
@@ -114,8 +127,7 @@ subir.addEventListener("click", ()=>{
         step3.style.backgroundColor = "#572EE5";
         step3.style.color = "#FFF ";
     }
-})
-
+});
 
 /* FUNCIONES PARA INICIAR CAM - GRABAR - TERMINAR */
 let stream = null;
@@ -125,12 +137,13 @@ let recorder;
 async function obtenerPermisos() {
     comenzar.style.display = "none";
     grabar.style.display = "block";
-
+ 
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function (mediaStream) {
             info1.style.display = "none";
             info2.style.display = "none";
             info3.style.display = "none";
+            contenedorVideo[0].style.display = "block";
             video.style.display = "block";
 
             video.srcObject = mediaStream;
@@ -166,20 +179,13 @@ function detenerGif(){
 
 function detenerCallBack(){
     videoBlob = recorder.getBlob();
-
-    /* video.src = video.srcObject = null;
-    video.src = URL.createObjectURL(videoBlob);
-
     recorder.stream.stop();
     recorder.destroy();
     recorder = null;
-
-    invokeSaveAsDialog(videoBlob); */
-
-    recorder.stream.stop();
 }
 
 function realizarCargaGif(vBloob){
+    modalVideo.style.display = "block";
     let form = new FormData();
     form.append('file', vBloob, 'myGif.gif');
     console.log("info file");
@@ -195,45 +201,32 @@ function cargarGif(gifForm) {
         body: gifForm
     }).then(response => response.json())
     .then( jsonResult => {
-        localStorage.setItem("misGifos", "");
-        console.log("Resultado en json");
-        console.log(jsonResult);
-        console.log(jsonResult.meta.status);
-        console.log(jsonResult.data.id);
- 
-        recorder.destroy();
-        recorder = null; 
 
+        if (localStorage.getItem("misgifos") === null) {
+            localStorage.setItem("misgifos", arregloGifLocal);
+        }
+        else {
+            //console.log("Enta a si existe en local");
+            let arreglo = localStorage.getItem("misgifos");
+            arregloGifLocal = JSON.parse(arreglo);
+            //console.warn("Arreglo antes de salir de validacion" + arregloGifLocal);
+        }
+  
         idGif = jsonResult.data.id;
         status = jsonResult.meta.status; 
+
+        arregloGifLocal.push(idGif);
         
-        console.log("ID gif " + idGif);
-        console.log("status " + status);
+        actualizarModal();
+        localStorage.setItem("misgifos", JSON.stringify(arregloGifLocal) );
+
     }).catch(function (error) {
         console.log("Ocurrió un error al cargar el endpoint");
         console.error(error);
     })
 } 
 
-let cronometro;
-
-function contador(){
-    let segundos = 0;
-    let minutos = 0;
-    let contador = document.getElementById("contador");
-
-    cronometro = setInterval(
-        function(){        
-            if( segundos == 60) {
-                segundos = 0;
-                minutos += 1;
-            }
-
-            contador.innerHTML = "00:0" + minutos + ":" + segundos;
-            segundos += 1;
-        }, 1000);
-}
-
-function detenerCronometro() {
-    clearInterval(cronometro);
+function actualizarModal () {
+    imgVideoModal.src = "images/icons/check.svg";
+    textVideoModal.innerText = "GIFO subido con éxito";
 }

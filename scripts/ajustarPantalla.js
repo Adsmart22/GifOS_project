@@ -1,6 +1,5 @@
 
 window.addEventListener("resize", () => {
-    //function cambiarMenu(){
         let nocturno = document.getElementById("nightModeOption");
         let favoritos = document.getElementById("favoritesOption");
         let myGif = document.getElementById("myGifOption");
@@ -38,8 +37,6 @@ window.addEventListener("resize", () => {
             imagenLogo.src = "./images/logos/logo-mobile.svg";
             imagenLogo.setAttribute("class", "mainLogo" );
         }
-    //}
-
 })
 
 

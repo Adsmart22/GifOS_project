@@ -1,6 +1,6 @@
 /* Importar variables */
 
-import { endpointGifById, apiKey, tituloGenerico, nombreGenerico } from './variables.js';
+import { endpointGifById, apiKey, tituloGenerico, nombreGenerico, limpiarGrid } from './variables.js';
 import {crearGiF} from './modalFuncionalidad.js';
 
 /* AGREGAR EVENTOS A BOTONES */
@@ -12,7 +12,7 @@ let favoritosLocal ;
 let arregloLocal ;
 
 favoritosMenu.addEventListener("click", () => {
-    limpiarGrid();
+    limpiarGrid("favoriteItems");
     inicializarValores();
 
     if(!favoritosLocal || arregloLocal.length === 0){
@@ -34,21 +34,11 @@ function inicializarValores(){
     arregloLocal = JSON.parse(favoritosLocal);
 }
 
-function limpiarGrid() {
-    let grid = document.getElementById("favoriteItems");
-    let panelNoFav = document.getElementById("noFavoritos");
-
-    while( grid.firstChild ) {
-        grid.removeChild( grid.firstChild );
-    }
-
-    panelNoFav.style.display = 'none';
-}
-
 async function obtenerGif(idGif) {
     let response = await fetch(endpointGifById + idGif + "?api_key="+ apiKey);
     let gifResult = await response.json();
     let status = gifResult.meta.status;
+    bntMasFavoritos.style.display = "block";
 
     try {
         if (status === 200 && !(gifResult.data === "")) {

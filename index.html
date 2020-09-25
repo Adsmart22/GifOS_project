@@ -43,19 +43,19 @@
       <main class="whiteSection main" id="main">
           <h1 id="mainTitle">Inspírate, busca, guarda y crea los mejores <span>GIFOS</span> </h1>
           <img src="./images/others/ilustra_header.svg" alt="Ilustra" class="imgBusqueda" id="searchImg"/>
-          <span class="searchControl" id="panelControl">
+          <div class="searchControl" id="panelControl">
             <img src="./images/icons/close.svg" alt="Cerrar" id="cerrarBusqueda" />
             <input type="text" maxlength="70" placeholder="Busca GIFOS y más" id="barraBuscadora">
             <img src="./images/icons/icon-search.svg" alt="Búsqueda" id="btnPanelBusqueda" />
             <ul id="coincidencias">
             </ul>
-          </span>          
+          </div>          
           
           <span class="secundaryTitle">Trending</span>
           <p id="trendingText"></p>
           <section class="resultOfSearch">
             <h2 class="secundaryTitle" id="result">Resultado</h2>
-            <img src="./images/icons/icon-busqueda-sin-resultado.svg" id="sinResulutados"/>
+            <img src="./images/icons/icon-busqueda-sin-resultado.svg" id="sinResulutados" alt="Sin resultados"/>
             <div id="resultContainer">
             </div>
           </section>
@@ -68,7 +68,7 @@
         <h2 class="secundaryTitle">Favoritos</h2>
         <div class="noContent" id="noFavoritos">
           <div>
-            <img src="images/icons/icon-favoritos.svg" />
+            <img src="images/icons/icon-favoritos.svg" alt="Sin resultados" />
           </div>
           <p>¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!</p>
         </div>
@@ -83,11 +83,11 @@
         <h2 class="secundaryTitle">Mis GIFOS</h2>
         <div class="noContent" id="noGifos">
           <div>
-            <img src="images/icons/icon-mis-gifos-sin-contenido.svg" />
+            <img src="images/icons/icon-mis-gifos-sin-contenido.svg" alt="sin contenido" />
           </div>
           <p>¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!</p>
         </div>
-        <div class="gifosItems">
+        <div id="gifosItems">
         </div>
         <button class="btnShowMore" id="verMasGif">VER MÁS</button>
       </aside>
@@ -102,7 +102,15 @@
               <h2 class="secundaryTitle" id="info1">Aquí podrás crear tus propios <span>GIFOS</span></h2>
               <p id="info2">¡Crea tus GIF en tan sólo 3 pasos!</p>
               <p id="info3">(solo necesitas una cámara para grabar un video)</p>
-              <video id="videoGif"></video>
+              <div class="mainModalVideo">
+                <video id="videoGif"></video>
+                <div id="modalVideo">
+                  <img src="images/icons/icon-link.svg" />
+                  <img src="images/icons/icon-download.svg" />
+                  <img src="images/icons/loader.svg" alt="loader" id="imgVideoModal" />
+                  <p id="textVideoModal">Estamos subiendo tu GIFo</p>
+                </div>
+              </div>             
             </div>
           </div>
           <br /><label id="contador"> </label>
@@ -190,7 +198,6 @@
     <script src="./scripts/menu.js"></script>
     <script src="./scripts/trendingConexion.js" type="module"></script>
     <script src="./scripts/trendingTags.js" type="module"></script>
-    <script src="./scripts/manipularImagenes.js"></script>
     <script src="./scripts/autocompleteConection.js" type="module"></script>
     <script src="./scripts/searchConection.js" type="module"></script>
     <script src="./scripts/favoritos.js" type="module"> </script>
