@@ -2,6 +2,7 @@
 let masOpcionesDiv = document.getElementById("moreOpt");  // Funciona OK
 let favoritosM = document.getElementById("favoritosOpt");
 let misGif = document.getElementById("misGifOpt");
+let logo = document.getElementById("logo");
 
 /* Recuperar las secciones */
 
@@ -37,3 +38,9 @@ function cerrarBloques(){
     seccionFavoritos.style.display = "none";
     seccionGifos.style.display = "none";
 }
+
+logo.addEventListener("click", () => {
+    cerrarBloques();
+    seccionBuscar.style.display = "block";
+    location.reload();
+});

@@ -15,3 +15,36 @@ export let constraints = {
     } 
 };
 export const endpointCargar = "http://upload.giphy.com/v1/gifs";
+export function limpiarGrid(nameObject) {
+    let grid = document.getElementById(nameObject);
+    let panelNoFav = document.getElementById("noFavoritos");
+
+    while( grid.firstChild ) {
+        grid.removeChild( grid.firstChild );
+    }
+
+    panelNoFav.style.display = 'none';
+}
+
+let cronometro;
+
+export function contador(){
+    let segundos = 0;
+    let minutos = 0;
+    let contador = document.getElementById("contador");
+
+    cronometro = setInterval(
+        function(){        
+            if( segundos == 60) {
+                segundos = 0;
+                minutos += 1;
+            }
+
+            contador.innerHTML = "00:0" + minutos + ":" + segundos;
+            segundos += 1;
+        }, 1000);
+}
+
+export function detenerCronometro() {
+    clearInterval(cronometro);
+}

@@ -52,11 +52,40 @@
             height: 151px;
         }
 
-        #videoGif {
+        .mainModalVideo, #videoGif {
             width: 480px;
             height: 320px;
             margin: auto;
             margin-top: 1em;
+        }
+
+        .mainModalVideo{
+            position: relative;
+
+            #videoGif, #modalVideo {
+                position: absolute;
+            }
+
+            #modalVideo{
+                opacity: 0.6;
+                background: $purple;
+                width: 450px;
+                height: 320px;
+                margin: auto;
+                margin-top: 1em;
+
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+                p {
+                    font-family: Montserrat;
+                    font-weight: bold;
+                    font-size: 15px;
+                    color: $white;
+                    text-align: center;
+                }
+            }
         }
 
         label {

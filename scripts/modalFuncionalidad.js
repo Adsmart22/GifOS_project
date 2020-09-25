@@ -169,3 +169,10 @@ let spanRight = document.getElementById("right");
             }
         });
     }
+
+    let btnCerrar = document.getElementById("btnCloseModal");
+
+    btnCerrar.addEventListener("click", () => {
+        modal.style.display="none";
+    });
+    
