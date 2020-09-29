@@ -48,3 +48,20 @@ export function contador(){
 export function detenerCronometro() {
     clearInterval(cronometro);
 }
+
+export function limpiarGridBusqueda() {
+    let grid = document.getElementById("resultContainer");
+    let titulo = document.getElementById("result");
+    let btnVerMas = document.getElementById("masBusqueda");
+    let imgNoRes = document.getElementById("sinResulutados");
+
+    titulo.innerHTML = "";
+    btnVerMas.style.display = "none";
+    imgNoRes.style.display = "none";
+
+    while( grid.firstChild ) {
+        grid.removeChild( grid.firstChild );
+    }
+
+    sessionStorage.setItem('indiceBusqueda', '0');
+}

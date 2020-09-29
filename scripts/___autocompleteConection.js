@@ -1,6 +1,6 @@
 /* Importar variables */
 
-import { endpointSearch, apiKey, endpointAutocomplete } from './variables.js';
+import { endpointSearch, apiKey, endpointAutocomplete, limpiarGridBusqueda } from './variables.js';
 
 /* EVENTOS Y FUNCIONALIDAD PARA AUTOMPLETAR */
 
@@ -22,6 +22,7 @@ async function conectarAutocompetar(){
         if (status === 200 && tagsAuto.data.length > 0) {
             limpiarLista();
             actualizarTags(tagsAuto.data);
+            limpiarGridBusqueda();
         }
         else if (status === 404){
             throw new Error("Error - recurso no encontrado");
@@ -51,6 +52,7 @@ let btnCerrar = document.getElementById('cerrarBusqueda');
 function actualizarTags(valores) {
     panelBusqueda.style.flexDirection = "row-reverse";
     btnCerrar.style.display = "block";
+    limpiarGridBusqueda();
 
     let lista = document.getElementById("coincidencias");
 
@@ -68,6 +70,7 @@ function actualizarTags(valores) {
 
         btnCerrar.addEventListener("click", () => {
             actualizarTexto("", "borrar");
+            //limpiarGridBusqueda();
         })
 
         listContainer.append(imgLista);
@@ -86,6 +89,7 @@ function actualizarTexto(texto, accion) {
     }
     
     limpiarLista();
+    limpiarGridBusqueda();
     panelBusqueda.style.flexDirection = "row";
     btnCerrar.style.display = "none";
 }
