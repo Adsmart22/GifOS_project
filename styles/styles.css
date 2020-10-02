@@ -343,7 +343,6 @@ nav ul li a {
 .cardTrending {
   width: 243px;
   height: 187px;
-  margin-left: 22px;
 }
 
 .gifResult {
@@ -403,19 +402,90 @@ nav ul li a {
 }
 
 /* Clases para el modal hover - desktop*/
-.cardOptions {
-  background-color: #572EE5;
-  opacity: 0.7;
-  position: absolute;
-  z-index: 2;
+@media all and (min-width: 100px) {
+  .mainContainer {
+    position: relative;
+    width: 100%;
+  }
+  .gifResult, .imgGifItem, .cardTrending {
+    position: absolute;
+  }
+  .modalView, .modalViewTrend, .modalViewFavGif {
+    background-color: #572EE5;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    display: none;
+  }
+  .mainContainer, .modalView {
+    width: 156px;
+    height: 120px;
+  }
+  #resultTrendingGif::-webkit-scrollbar {
+    display: none;
+  }
+  .mainContainerTrend, .mainContFavGif {
+    position: relative;
+    width: 100%;
+  }
+  .mainContainerTrend {
+    width: 243px;
+    height: 187px;
+  }
+  .mainContainerTrend {
+    margin-left: 22px;
+  }
+  .modalViewTrend {
+    height: 187px;
+  }
+  .mainContFavGif {
+    width: 100%;
+    height: 120px;
+  }
+  .modalViewFavGif {
+    height: 120px;
+  }
 }
 
-.cardOptionsHidden {
-  opacity: 0;
+@media all and (min-width: 376px) {
+  .mainContainer {
+    position: relative;
+    width: 100%;
+  }
+  .gifResult, .imgGifItem, .cardTrending {
+    position: absolute;
+  }
+  .modalView {
+    background-color: #572EE5;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+  }
+  .mainContainer, .modalView {
+    width: 100%;
+    height: 170px;
+  }
+  .mainContFavGif, .modalViewFavGif {
+    width: 100%;
+    height: 200px;
+  }
+  .gifResult, .cardTrending {
+    width: 100%;
+    height: 100%;
+  }
+  .mainContainerTrend, .modalViewTrend {
+    width: 243px;
+    height: 200px;
+  }
 }
 
-.cardContainer {
-  position: relative;
+@media all and (min-width: 700px) {
+  .gifResult {
+    width: 100%;
+    height: 200px;
+  }
 }
 
 /* Estilos para la grabacion */
@@ -733,10 +803,10 @@ body > main #masBusqueda {
     -webkit-column-gap: 10px;
             column-gap: 10px;
     row-gap: 10px;
-  }
-  .main .resultOfSearch > #resultContainer .gifResult {
-    width: 100%;
-    height: 200px;
+    /* .gifResult{
+                width: 100%;
+                height: 200px;
+            } */
   }
 }
 
@@ -768,14 +838,14 @@ body > main #masBusqueda {
 }
 
 .trendingSection .trendingContainer #resultTrendingGif {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  /* display: flex;
+            flex-direction: row; */
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
   overflow-x: auto;
+  padding-bottom: 25px;
 }
 
 .trendingSection .trendingContainer #resultTrendingGif::-webkit-scrollbar {
@@ -829,13 +899,10 @@ body > main #masBusqueda {
 
 /*dark mode */
 /* Variables for mobile*/
-.favorites {
-  text-align: center;
-}
-
-.favorites img {
+.favorites .imgCont {
   width: 28px;
   height: 21px;
+  margin-left: 50vw;
 }
 
 .favorites #favoriteItems {
@@ -852,11 +919,10 @@ body > main #masBusqueda {
           justify-content: space-between;
   margin-top: 46px;
   padding-bottom: 46px;
-}
-
-.favorites #favoriteItems img {
-  width: 158px;
-  height: 120px;
+  /* img{
+            width: 100%;
+            height: $genericHeightImg;
+        } */
 }
 
 @media all and (min-width: 376px) {
@@ -864,34 +930,34 @@ body > main #masBusqueda {
     width: 80%;
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
-  }
-  .favorites > #favoriteItems img {
-    width: 100%;
-    height: 100px;
+    /* img{
+            width: 100%;
+            height: 100px;
+        }  */
   }
 }
 
 @media all and (min-width: 700px) {
+  .favorites .imgCont {
+    margin-left: 45vw;
+  }
   .favorites #favoriteItems {
     width: 80%;
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
-  }
-  .favorites #favoriteItems img {
-    width: 100%;
-    height: 200px;
+    /* img{
+                width: 100%;
+                height: 200px;
+            }  */
   }
 }
 
 /*dark mode */
 /* Variables for mobile*/
-.myGifos {
-  text-align: center;
-}
-
-.myGifos img {
+.myGifos .imgGif {
   width: 23px;
   height: 21px;
+  margin-left: 50vw;
 }
 
 .myGifos #gifosItems {
