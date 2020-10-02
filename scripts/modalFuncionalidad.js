@@ -4,8 +4,56 @@ let modal = document.getElementById("modal");
 const imagenModal = document.getElementById("centralImg");
 const imgUser = document.getElementById("imgUser");
 
-export function crearGiF(idGif, urlGif, name, title, idContainer, className){    
+//export function crearGiF(idGif, urlGif, name, title, idContainer, className,){    
+    export function crearGiF(idGif, urlGif, name, title, idContainer, className, modalViewClass, mainContainerClass){        
     let contenedor = document.getElementById(idContainer);
+    let mainContainer = document.createElement("div"); // mainContainer - class
+    let modalOver = document.createElement("div"); // modalView - class
+    let card = document.createElement("img"); //gifResult - class
+
+  
+    card.src = urlGif;
+    card.id = idGif;
+    card.alt = title;
+    card.setAttribute("class", className);
+    modalOver.setAttribute("class", modalViewClass);
+    mainContainer.setAttribute("class", mainContainerClass);
+    mainContainer.append(card);
+    mainContainer.append(modalOver);
+    contenedor.append(mainContainer);
+
+    if ( screen.width > 375) {
+        mainContainer.addEventListener("mouseover", () =>{
+            modalOver.style.display = "block";
+        });
+    
+        mainContainer.addEventListener("mouseout", () =>{
+            modalOver.style.display = "none";
+        });
+    }
+
+    mainContainer.addEventListener("click", () => {
+        modal.style.display="block";
+        imagenModal.src = card.src;
+        imagenModal.id = card.id;
+        imgUser.textContent = name;
+ 
+        let titulo = document.createElement("span");
+        titulo.innerText = title;
+        imgUser.append(titulo);
+        isFavorite(card.id)
+
+        downloadImagen(urlGif).then(blob => {
+            const url2 = URL.createObjectURL(blob);
+            let a = document.getElementById("descarga");
+            a.href = url2;
+            a.download = name + '.gif';
+            a.title = 'Descargar';
+            a.textContent = 'Descargar';
+        }).catch(console.error); 
+    })
+
+    /* let contenedor = document.getElementById(idContainer);
     let card = document.createElement("img");
 
     card.src = urlGif;
@@ -35,18 +83,18 @@ export function crearGiF(idGif, urlGif, name, title, idContainer, className){
             a.title = 'Descargar';
             a.textContent = 'Descargar';
         }).catch(console.error); 
-    });
+    }); */
 }
 
 /* Funcionalidad para descarga de gif */
 
 async function downloadImagen(url) {
-    console.info("Valor de URL" + url);
+    //console.info("Valor de URL" + url);
     let response = await fetch(url);
     let gifBlob = await response.blob();
-    console.log ("Entra a la transformación en blob");
+    /* console.log ("Entra a la transformación en blob");
     console.log("Response: " + response);
-    console.info("Blob: " + gifBlob);
+    console.info("Blob: " + gifBlob); */
     return gifBlob;
 }
 

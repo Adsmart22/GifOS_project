@@ -124,6 +124,6 @@ function crearResultadoBusqueda(resultadoBusqueda, itemBusqueda){
         }
 
         sessionStorage.setItem('indiceBusqueda', '12');
-        crearGiF(idGif, url, name, title, "resultContainer", "gifResult");
+        crearGiF(idGif, url, name, title, "resultContainer", "gifResult", "modalView", "mainContainer");
     }
 }

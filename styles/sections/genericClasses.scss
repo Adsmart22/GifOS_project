@@ -97,7 +97,7 @@
 .cardTrending{
     width: $trendingImgWidth;
     height: $trendingImgHeight;
-    margin-left: 22px;
+    //margin-left: 22px;
 }
 
 .gifResult{
@@ -156,20 +156,109 @@
 
 /* Clases para el modal hover - desktop*/
 
-.cardOptions{
-    background-color: $purple;
-    opacity: 0.7;
-    position: absolute;
-    z-index: 2;
-} 
+@media all and (min-width: 100px) {
+    .mainContainer {
+        position: relative;
+        width: 100%;
+    }
+    
+    .gifResult, .imgGifItem, .cardTrending {
+        position: absolute;
+    }
+    
+    .modalView, .modalViewTrend, .modalViewFavGif{
+        background-color: $purple;
+        opacity: 0.7;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        display: none;
+    }
+    .mainContainer, .modalView  {
+        width: $resultWidth;
+        height: $resultHeight;
+    }
 
-.cardOptionsHidden{
-    opacity: 0;
+    #resultTrendingGif::-webkit-scrollbar{
+        display: none;
+    }
+
+    .mainContainerTrend, .mainContFavGif {
+        position: relative;
+        width: 100%;
+    }
+
+    .mainContainerTrend  {
+        width: $trendingImgWidth;
+        height: $trendingImgHeight;
+    }
+    .mainContainerTrend {
+        margin-left: 22px;
+    }
+
+    .modalViewTrend{
+        height: $trendingImgHeight;
+    }
+
+    .mainContFavGif{
+        width: 100%;
+        height: $resultHeight;
+    }
+
+    .modalViewFavGif{
+        height: $resultHeight;
+    }
 }
 
-.cardContainer{
-    position: relative;
+@media all and (min-width: 376px) {
+    .mainContainer {
+        position: relative;
+        width: 100%;
+    }
+    
+    .gifResult, .imgGifItem, .cardTrending {
+        position: absolute;
+    }
+    
+    .modalView{
+        background-color: $purple;
+        opacity: 0.7;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+    }
+    
+    .mainContainer, .modalView  {
+        width: 100%;
+        height: 170px;
+    }
+
+    .mainContFavGif, .modalViewFavGif {
+        width: 100%;
+        height: 200px;
+    }
+
+    .gifResult, .cardTrending {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mainContainerTrend, .modalViewTrend {
+        width: 243px;
+        height: 200px;
+    }
+
 }
+
+@media all and (min-width: 700px) {
+    .gifResult{
+        width: 100%;
+        height: 200px;
+    }
+}
+
+
+
 
 /* Estilos para la grabacion */
 
