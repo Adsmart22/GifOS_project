@@ -5,12 +5,52 @@ const imagenModal = document.getElementById("centralImg");
 const imgUser = document.getElementById("imgUser");
 
 //export function crearGiF(idGif, urlGif, name, title, idContainer, className,){    
-    export function crearGiF(idGif, urlGif, name, title, idContainer, className, modalViewClass, mainContainerClass){        
+export function crearGiF(idGif, urlGif, name, title, idContainer, className, modalViewClass, mainContainerClass){        
     let contenedor = document.getElementById(idContainer);
-    let mainContainer = document.createElement("div"); // mainContainer - class
-    let modalOver = document.createElement("div"); // modalView - class
-    let card = document.createElement("img"); //gifResult - class
+    let mainContainer = document.createElement("div"); 
+    let modalOver = document.createElement("div"); 
+    let card = document.createElement("img"); 
 
+    /* Incia Elementos de modal */
+    let divDown = document.createElement("div");
+    let imgDownload = document.createElement("img");
+    let divMax = document.createElement("div");
+    let imgAgrandar = document.createElement("img");
+    let divFav = document.createElement("div");
+    let imgFavorito = document.createElement("img");
+    let cardName = document.createElement("p");
+    let cardTitle = document.createElement("p");
+    let divContNew = document.createElement("div");
+
+    imgDownload.src = "./images/icons/icon-download.svg";
+    imgDownload.setAttribute("class", "imagesFunc");
+    imgFavorito.src = "./images/icons/icon-fav-active.svg";
+    imgFavorito.setAttribute("class", "imagesFunc");
+    imgAgrandar.src =" ./images/icons/icon-max.svg";
+    imgAgrandar.setAttribute("class", "imagesFunc");
+    cardName.innerText = idGif;
+    cardName.setAttribute("class", "cardName");
+    cardTitle.innerText = title;
+    cardTitle.setAttribute("class", "cardTitle");
+
+    divDown.setAttribute("class", "divLogos");
+    divFav.setAttribute("class", "divLogos");
+    divMax.setAttribute("class", "divLogos");
+    divContNew.setAttribute("class", "divContNew");
+
+    divDown.append(imgDownload);
+    divFav.append(imgFavorito);
+    divMax.append(imgAgrandar);
+
+    divContNew.append(divFav);
+    divContNew.append(divMax);
+    divContNew.append(divDown);
+
+    modalOver.append(divContNew);
+    modalOver.append(cardName);
+    modalOver.append(cardTitle);
+
+    /* Termina Elementos de modal */
   
     card.src = urlGif;
     card.id = idGif;
@@ -21,6 +61,8 @@ const imgUser = document.getElementById("imgUser");
     mainContainer.append(card);
     mainContainer.append(modalOver);
     contenedor.append(mainContainer);
+
+    //modalOver.style.display = "block";
 
     if ( screen.width > 375) {
         mainContainer.addEventListener("mouseover", () =>{
@@ -52,38 +94,6 @@ const imgUser = document.getElementById("imgUser");
             a.textContent = 'Descargar';
         }).catch(console.error); 
     })
-
-    /* let contenedor = document.getElementById(idContainer);
-    let card = document.createElement("img");
-
-    card.src = urlGif;
-    card.id = idGif;
-    card.alt = title;
-    card.setAttribute("class", className);
-
-    contenedor.append(card);
-
-    card.addEventListener("click", () => {
-        modal.style.display="block";
-        imagenModal.src = card.src;
-        imagenModal.id = card.id;
-        imgUser.textContent = name;
- 
-        let titulo = document.createElement("span");
-        titulo.innerText = title;
-        imgUser.append(titulo);
-        isFavorite(card.id)
-
-        downloadImagen(urlGif).then(blob => {
-            const url2 = URL.createObjectURL(blob);
-            console.log ("Valor d URL 2 " + url2);
-            let a = document.getElementById("descarga");
-            a.href = url2;
-            a.download = name + '.gif';
-            a.title = 'Descargar';
-            a.textContent = 'Descargar';
-        }).catch(console.error); 
-    }); */
 }
 
 /* Funcionalidad para descarga de gif */
