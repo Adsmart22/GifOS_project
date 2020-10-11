@@ -234,6 +234,20 @@
         -ms-flex-direction: row;
             flex-direction: row;
     display: none;
+    /* #panelDescarga{
+            position: relative;
+            width: 50px;
+            top: -7px;
+            
+            img, a {
+                position: absolute;
+            }
+        
+            a {
+                z-index: 2;
+                opacity: 0;
+            }
+        } */
   }
   .modalView .divContNew, .modalViewTrend .divContNew, .modalViewFavGif .divContNew {
     width: 100%;
@@ -265,6 +279,16 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .modalView .descarga, .modalViewTrend .descarga, .modalViewFavGif .descarga {
+    position: relative;
+  }
+  .modalView .descarga img, .modalView .descarga a, .modalViewTrend .descarga img, .modalViewTrend .descarga a, .modalViewFavGif .descarga img, .modalViewFavGif .descarga a {
+    position: absolute;
+  }
+  .modalView .descarga a, .modalViewTrend .descarga a, .modalViewFavGif .descarga a {
+    z-index: 2;
+    opacity: 0;
   }
   .modalView .imagesFunc, .modalViewTrend .imagesFunc, .modalViewFavGif .imagesFunc {
     width: 18px;

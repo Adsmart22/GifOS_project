@@ -150,7 +150,6 @@
         z-index: 2;
         opacity: 0;
     }
-
 }
 
 
@@ -265,6 +264,33 @@
             justify-content: center;
             align-items: center;
         }
+
+        .descarga {
+            position: relative;
+
+            img, a {
+                position: absolute;
+            }
+            a {
+                z-index: 2;
+                opacity: 0;
+            }
+        }
+
+        /* #panelDescarga{
+            position: relative;
+            width: 50px;
+            top: -7px;
+            
+            img, a {
+                position: absolute;
+            }
+        
+            a {
+                z-index: 2;
+                opacity: 0;
+            }
+        } */
 
         .imagesFunc {
             width: 18px;
